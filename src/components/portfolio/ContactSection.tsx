@@ -1,11 +1,7 @@
-"use client";
-
 import emailjs from '@emailjs/browser';
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import SectionHeader from './SectionHeader';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -30,12 +26,10 @@ export default function ContactSection() {
     setSubmitStatus('idle');
 
     try {
-      // EmailJS configuration
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
 
-      // Send email using EmailJS
       const result = await emailjs.send(
         serviceId,
         templateId,
@@ -43,7 +37,7 @@ export default function ContactSection() {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_email: 'lightify6@gmail.com', // Your email
+          to_email: 'lightify6@gmail.com',
         },
         publicKey
       );
@@ -61,216 +55,145 @@ export default function ContactSection() {
   };
 
   return (
-    <motion.section
-      id="contact"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="mb-16"
-    >
+    <section id="contact" className="py-16">
       <div className="max-w-4xl mx-auto">
-
-
-        <SectionHeader
-          heading="Let's Work Together"
-          description="Ready to bring your ideas to life? I'm always excited to work on interesting projects and collaborate with amazing people. Let's create something extraordinary together."
-          tagIcon='solar:chat-line-bold'
-          tagText='Contact'
-          centered={true}
-
-        />
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-3">Let&apos;s Work Together</h2>
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Ready to bring your ideas to life? I&apos;m always excited to work on interesting projects and collaborate with amazing people.
+          </p>
+        </div>
 
         {/* Contact Form */}
-        <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                viewport={{ once: true }}
-              >
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-all duration-300"
-                  placeholder="Your full name"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-all duration-300"
-                  placeholder="your.email@example.com"
-                />
-              </motion.div>
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+                Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
+                placeholder="Your full name"
+              />
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              viewport={{ once: true }}
-            >
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Message *
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+                Email *
               </label>
-              <textarea
-                id="message"
-                name="message"
+              <input
+                type="email"
+                id="email"
+                name="email"
                 required
-                rows={5}
-                value={formData.message}
+                value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-all duration-300 resize-none"
-                placeholder="Tell me about your project or idea..."
+                className="w-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
+                placeholder="your.email@example.com"
               />
-            </motion.div>
+            </div>
+          </div>
 
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              viewport={{ once: true }}
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              Message *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows={5}
+              value={formData.message}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors resize-none"
+              placeholder="Tell me about your project or idea..."
+            />
+          </div>
+
+          <div className="text-center">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <>
-                    <Icon icon="solar:loading-outline" width={20} height={20} className="animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Icon icon="solar:letter-outline" width={20} height={20} />
-                    Send Message
-                    <motion.div
-                      className="ml-2"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      →
-                    </motion.div>
-                  </>
-                )}
-              </motion.button>
-
-              {/* Status Messages */}
-              {submitStatus === 'success' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="relative mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl"
-                >
-                  <div className="flex items-center gap-2 text-green-700 dark:text-green-400">
-                    <Icon icon="solar:check-circle-bold" width={20} height={20} />
-                    <span className="font-medium">Message sent successfully!</span>
-                  </div>
-                  <p className="text-green-600 text-left dark:text-green-500 text-sm mt-1">
-                    Thank you for reaching out. I&apos;ll get back to you soon!
-                  </p>
-                  {/* add a button to close the message */}
-                  <button
-                    onClick={() => setSubmitStatus('idle')}
-                    className="absolute top-1 right-1  text-red-500 rounded-md"
-                  >
-                    <Icon icon="solar:close-circle-bold" width={20} height={20} />
-                  </button>
-                </motion.div>
+              {isSubmitting ? (
+                <>
+                  <Icon icon="solar:loading-outline" width={20} height={20} className="animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Icon icon="solar:letter-outline" width={20} height={20} />
+                  Send Message
+                </>
               )}
+            </button>
 
-              {submitStatus === 'error' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl"
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className="relative mt-4 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-900 rounded-lg">
+                <div className="flex items-center gap-2 text-green-700 dark:text-green-400">
+                  <Icon icon="solar:check-circle-bold" width={20} height={20} />
+                  <span className="font-medium">Message sent successfully!</span>
+                </div>
+                <button
+                  onClick={() => setSubmitStatus('idle')}
+                  className="absolute top-2 right-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
                 >
-                  <div className="flex items-center gap-2 text-red-700 dark:text-red-400">
-                    <Icon icon="solar:close-circle-bold" width={20} height={20} />
-                    <span className="font-medium">Failed to send message</span>
-                  </div>
-                  <p className="text-red-600 text-left dark:text-red-500 text-sm mt-1">
-                    Please try again or contact me directly at lightify6@gmail.com
-                  </p>
-                  {/* add a button to close the message */}
-                  <button
-                    onClick={() => setSubmitStatus('idle')}
-                    className="absolute top-1 right-1  text-red-500 rounded-md"
-                  >
-                    <Icon icon="solar:close-circle-bold" width={20} height={20} />
-                  </button>
-                </motion.div>
-              )}
-            </motion.div>
-          </form>
-        </motion.div>
+                  <Icon icon="solar:close-circle-bold" width={20} height={20} />
+                </button>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-900 rounded-lg">
+                <div className="flex items-center gap-2 text-red-700 dark:text-red-400">
+                  <Icon icon="solar:close-circle-bold" width={20} height={20} />
+                  <span className="font-medium">Failed to send message</span>
+                </div>
+                <p className="text-red-600 dark:text-red-500 text-sm mt-1">
+                  Please try again or contact me directly at lightify6@gmail.com
+                </p>
+                <button
+                  onClick={() => setSubmitStatus('idle')}
+                  className="absolute top-2 right-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+                >
+                  <Icon icon="solar:close-circle-bold" width={20} height={20} />
+                </button>
+              </div>
+            )}
+          </div>
+        </form>
 
         {/* Alternative Contact Methods */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-gray-600 dark:text-gray-400 mb-6">Or reach out directly:</p>
+        <div className="text-center">
+          <p className="text-zinc-600 dark:text-zinc-400 mb-6">Or reach out directly:</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="mailto:lightify6@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 border-2 border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500 rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                <Icon icon="solar:mailbox-bold-duotone" width={18} height={18} />
-                Send Email
-              </Link>
-            </motion.div>
+            <Link
+              href="mailto:lightify6@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-lg font-medium transition-colors shadow-md"
+            >
+              <Icon icon="solar:letter-bold" width={18} height={18} />
+              Send Email
+            </Link>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="/CV.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 border-2 border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500 rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                <Icon icon="solar:download-outline" width={18} height={18} />
-                Download CV
-              </Link>
-            </motion.div>
+            <Link
+              href="/CV.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-lg font-medium transition-colors shadow-md"
+            >
+              <Icon icon="solar:download-outline" width={18} height={18} />
+              Download CV
+            </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
-} 
+}

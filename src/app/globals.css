@@ -53,7 +53,7 @@
 	}
 
 	body {
-		@apply bg-gray-50 text-gray-900 dark:bg-black dark:text-white font-sans antialiased;
+		@apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 font-sans antialiased;
 		background-color: hsl(var(--background));
 		color: hsl(var(--foreground));
 	}
@@ -67,43 +67,11 @@
 	.gradient-text {
 		@apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
 	}
-
-	.glass-effect {
-		@apply bg-white/10 backdrop-blur-sm border border-white/20;
-	}
-
-	.hover-glow {
-		@apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25;
-	}
-
-	.section-padding {
-		@apply py-20 px-4;
-	}
-
-	.container-width {
-		@apply max-w-6xl mx-auto;
-	}
 }
 
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
-	}
-
-	.animation-delay-200 {
-		animation-delay: 200ms;
-	}
-
-	.animation-delay-400 {
-		animation-delay: 400ms;
-	}
-
-	.animation-delay-600 {
-		animation-delay: 600ms;
-	}
-
-	.animation-delay-800 {
-		animation-delay: 800ms;
 	}
 }
 
@@ -113,20 +81,20 @@
 }
 
 ::-webkit-scrollbar-track {
-	background: #f1f5f9;
+	background: #f4f4f5;
 }
 
 .dark ::-webkit-scrollbar-track {
-	background: #1a1a1a;
+	background: #18181b;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+	background: #a1a1aa;
 	border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(180deg, #2563eb, #7c3aed);
+	background: #71717a;
 }
 
 /* Custom selection */
@@ -145,7 +113,7 @@ button,
 a,
 input,
 textarea {
-	transition: all 0.3s ease;
+	transition: all 0.2s ease;
 }
 
 /* Custom focus states */
@@ -155,149 +123,4 @@ input:focus-visible,
 textarea:focus-visible {
 	outline: 2px solid #3b82f6;
 	outline-offset: 2px;
-}
-
-/* Loading animation */
-@keyframes pulse-glow {
-	0%,
-	100% {
-		opacity: 1;
-		box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-	}
-	50% {
-		opacity: 0.8;
-		box-shadow: 0 0 20px rgba(59, 130, 246, 0.8),
-			0 0 30px rgba(139, 92, 246, 0.6);
-	}
-}
-
-.pulse-glow {
-	animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Floating animation */
-@keyframes float {
-	0%,
-	100% {
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(-10px);
-	}
-}
-
-.float-animation {
-	animation: float 3s ease-in-out infinite;
-}
-
-/* Gradient animation */
-@keyframes gradient-shift {
-	0%,
-	100% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-}
-
-.gradient-animation {
-	background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
-	background-size: 400% 400%;
-	animation: gradient-shift 15s ease infinite;
-}
-
-/* Typing animation */
-@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-}
-
-@keyframes blink-caret {
-	from,
-	to {
-		border-color: transparent;
-	}
-	50% {
-		border-color: #3b82f6;
-	}
-}
-
-.typing-animation {
-	overflow: hidden;
-	border-right: 2px solid #3b82f6;
-	white-space: nowrap;
-	animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-/* Particle effect */
-@keyframes particle-float {
-	0% {
-		transform: translateY(0px) rotate(0deg);
-		opacity: 1;
-	}
-	100% {
-		transform: translateY(-100px) rotate(360deg);
-		opacity: 0;
-	}
-}
-
-.particle {
-	animation: particle-float 4s linear infinite;
-}
-
-/* Glitch effect */
-@keyframes glitch {
-	0% {
-		text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-			0.025em 0.04em 0 #fffc00;
-	}
-	15% {
-		text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-			0.025em 0.04em 0 #fffc00;
-	}
-	16% {
-		text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
-			-0.05em -0.05em 0 #fffc00;
-	}
-	49% {
-		text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
-			-0.05em -0.05em 0 #fffc00;
-	}
-	50% {
-		text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
-			0 -0.04em 0 #fffc00;
-	}
-	99% {
-		text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
-			0 -0.04em 0 #fffc00;
-	}
-	100% {
-		text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
-			-0.04em -0.025em 0 #fffc00;
-	}
-}
-
-.glitch:hover {
-	animation: glitch 1s, blur 0.2s ease-out;
-}
-
-/* Neon glow effect */
-.neon-glow {
-	text-shadow: 0 0 5px currentColor, 0 0 10px currentColor,
-		0 0 15px currentColor, 0 0 20px #3b82f6, 0 0 35px #3b82f6, 0 0 40px #3b82f6;
-}
-
-/* Background grid pattern */
-.grid-background {
-	background-image: linear-gradient(
-			rgba(59, 130, 246, 0.1) 1px,
-			transparent 1px
-		),
-		linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-	background-size: 50px 50px;
 }

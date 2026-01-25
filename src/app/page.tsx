@@ -2,21 +2,19 @@
 
 import {
   Background,
-  CertificationsSection,
   ContactSection,
   ExperienceSection,
   Footer,
   HeroSection,
   Navigation,
-  OverviewSection,
-  ProjectsSection,
   TechStackSection,
-  TestimonialsSection
+  AboutSection,
+  WorkSection,
 } from "@/components/portfolio";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen text-gray-900 dark:text-white relative">
+    <div className="min-h-screen text-zinc-900 dark:text-zinc-50 relative">
       {/* Background */}
       <Background />
 
@@ -27,8 +25,8 @@ export default function Portfolio() {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Overview Section */}
-        <OverviewSection />
+        {/* About Section */}
+        <AboutSection />
 
         {/* Tech Stack Section */}
         <TechStackSection />
@@ -36,14 +34,8 @@ export default function Portfolio() {
         {/* Experience Section */}
         <ExperienceSection />
 
-        {/* Projects Section */}
-        <ProjectsSection />
-
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-
-        {/* Certifications Section */}
-        <CertificationsSection />
+        {/* Work Section */}
+        <WorkSection />
 
         {/* Contact Section */}
         <ContactSection />
@@ -53,4 +45,4 @@ export default function Portfolio() {
       </div>
     </div>
   );
-} 
+}
