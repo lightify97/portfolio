@@ -303,7 +303,7 @@ export default function TechStackSection() {
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
                 {categoryName}
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              <div className="grid border-2 px-0 ml-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-10 gap">
                 {techs.map((tech, index) => (
                   <TechCard
                     key={tech.name}
@@ -317,7 +317,7 @@ export default function TechStackSection() {
         </div>
       ) : (
         // Filtered view
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap">
           {filteredTech.map((tech, index) => (
             <TechCard
               key={tech.name}
@@ -351,92 +351,90 @@ function TechCard({
     }
   };
 
-  const getLevelBadgeStyle = (level: string) => {
-    switch (level) {
-      case "Expert":
-        return "bg-gradient-to-r from-emerald-500/10 to-teal-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800";
-      case "Intermediate":
-        return "bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800";
-      case "Beginner":
-        return "bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800";
-      default:
-        return "bg-gray-100 text-gray-700 border-gray-200";
-    }
-  };
+  // const getLevelBadgeStyle = (level: string) => {
+  //   switch (level) {
+  //     case "Expert":
+  //       return "bg-gradient-to-r from-emerald-500/10 to-teal-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800";
+  //     case "Intermediate":
+  //       return "bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800";
+  //     case "Beginner":
+  //       return "bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800";
+  //     default:
+  //       return "bg-gray-100 text-gray-700 border-gray-200";
+  //   }
+  // };
 
-  const getExperienceColor = (years: number) => {
-    if (years >= 4) return "text-emerald-600 dark:text-emerald-400";
-    if (years >= 2) return "text-blue-600 dark:text-blue-400";
-    return "text-amber-600 dark:text-amber-400";
-  };
+  // const getExperienceColor = (years: number) => {
+  //   if (years >= 4) return "text-emerald-600 dark:text-emerald-400";
+  //   if (years >= 2) return "text-blue-600 dark:text-blue-400";
+  //   return "text-amber-600 dark:text-amber-400";
+  // };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.05,
-        type: "spring",
-        stiffness: 100
-      }}
-      viewport={{ once: true }}
+    <div
+      // initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      // whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      // transition={{
+      //   duration: 0.6,
+      //   delay: index * 0.05,
+      //   type: "spring",
+      //   stiffness: 100
+      // }}
+      // viewport={{ once: true }}
       className="group relative"
     >
       {/* Card Background with Gradient Border */}
-      <div className="relative">
-        {/* Subtle Gradient Glow Effect */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${getLevelGradient(tech.level)} rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl scale-105`} />
+      {/* Subtle Gradient Glow Effect */}
+      {/* <div className={`absolute inset-0 bg-gradient-to-br ${getLevelGradient(tech.level)} rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl scale-105`} /> */}
 
-        {/* Main Card */}
-        <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-2xl border border-gray-200/60 dark:border-gray-700/60 group-hover:border-gray-300/80 dark:group-hover:border-gray-600/80 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-black/5 dark:group-hover:shadow-black/40 overflow-hidden">
+      {/* Main Card */}
 
-          {/* Subtle Top Accent - Much More Refined */}
-          <div className="relative h-0.5 bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent">
+      {/* Subtle Top Accent - Much More Refined */}
+      {/* <div className="relative h-0.5 bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent">
             <div className={`absolute inset-0 bg-gradient-to-r ${getLevelGradient(tech.level)} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-          </div>
+          </div> */}
 
-          {/* Floating Particles Background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+      {/* Floating Particles Background */}
+      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
             <div className="absolute top-4 right-4 w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full animate-pulse" style={{ animationDelay: '0s' }} />
             <div className="absolute top-8 left-6 w-0.5 h-0.5 bg-gray-400 dark:bg-gray-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
             <div className="absolute bottom-6 right-8 w-0.5 h-0.5 bg-gray-300 dark:bg-gray-600 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-          </div>
+          </div> */}
 
-          <div className="p-4 relative">
-            {/* Icon Container with Enhanced Design */}
-            <div className="flex justify-center mb-3">
-              <div className="relative group/icon">
-                {/* Icon Background with Subtle Pattern */}
-                <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 p-3 rounded-xl border border-gray-200/50 dark:border-gray-600/50 group-hover:border-gray-300/70 dark:group-hover:border-gray-500/70 transition-all duration-300">
-                  <Icon
-                    icon={tech.icon}
-                    className="group-hover/icon:scale-110 group-hover/icon:rotate-3 transition-all duration-300"
-                    width={36}
-                    height={36}
-                  />
+      <div className="p-0 relative">
+        {/* Icon Container with Enhanced Design */}
+        <div className="flex justify-center mb-3 max-w-fit flex-col gap-2 items-center ">
+          <div className="relative group/icon max-w-fit max-auto">
+            {/* Icon Background with Subtle Pattern */}
+            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 p-3 rounded-xl border border-gray-200/50 dark:border-gray-600/50 group-hover:border-gray-300/70 dark:group-hover:border-gray-500/70 transition-all duration-300 flex justify-center items-center min-w-fit">
+              <Icon
+                icon={tech.icon}
+                className="group-hover/icon:scale-110 group-hover/icon:rotate-3 transition-all duration-300"
+                width={36}
+                height={36}
+              />
 
-                  {/* Subtle Icon Glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${getLevelGradient(tech.level)} rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                </div>
-              </div>
+              {/* Subtle Icon Glow */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${getLevelGradient(tech.level)} rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
             </div>
+          </div>
+          <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 text-center mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors tracking-tight">
+            {tech.name}
+          </h3>
+        </div>
 
-            {/* Technology Name with Better Typography */}
-            <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 text-center mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors tracking-tight">
-              {tech.name}
-            </h3>
 
-            {/* Skill Level Badge */}
-            <div className="flex justify-center mb-2">
+        {/* Technology Name with Better Typography */}
+        {/* Skill Level Badge */}
+        {/* <div className="flex justify-center mb-2">
               <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${getLevelBadgeStyle(tech.level)} transition-all duration-300`}>
                 <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${getLevelGradient(tech.level)} mr-1.5`} />
                 {tech.level}
               </span>
-            </div>
+            </div> */}
 
-            {/* Experience Years with Enhanced Styling */}
-            {tech.yearsUsed && (
+        {/* Experience Years with Enhanced Styling */}
+        {/* {tech.yearsUsed && (
               <div className="text-center">
                 <div className="inline-flex items-center gap-1">
                   <div className={`w-1 h-1 rounded-full ${getExperienceColor(tech.yearsUsed).replace('text-', 'bg-')}`} />
@@ -445,18 +443,16 @@ function TechCard({
                   </span>
                 </div>
               </div>
-            )}
-          </div>
+            )} */}
+      </div>
 
-          {/* Subtle Mesh Pattern Overlay */}
-          <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05] pointer-events-none"
+      {/* Subtle Mesh Pattern Overlay */}
+      {/* <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05] pointer-events-none"
             style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
               backgroundSize: '20px 20px'
             }}
-          />
-        </div>
-      </div>
-    </motion.div>
+          /> */}
+    </div>
   );
 } 
