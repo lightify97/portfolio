@@ -7,6 +7,8 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #61 | 12:56 AM | ✅ | Updated testimonial quotes to typographic curly quotes in WorkSection | ~178 |
+| #60 | " | 🔄 | Complete minimalist portfolio redesign committed to worktree | ~480 |
 | #55 | 12:54 AM | 🔄 | Redesigned ContactSection to minimalist static component | ~428 |
 | #53 | 12:52 AM | 🔄 | Updated component exports for consolidated sections | ~240 |
 | #52 | " | 🟣 | Created consolidated Work section combining Projects and Testimonials | ~378 |

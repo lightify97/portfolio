@@ -131,7 +131,7 @@ export default function WorkSection() {
                   </div>
                 )}
                 <blockquote className="text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
                 <div>
                   <div className="font-semibold text-zinc-900 dark:text-zinc-50">{testimonial.author}</div>
