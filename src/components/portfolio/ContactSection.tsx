@@ -55,21 +55,25 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16">
-      <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-3">Let&apos;s Work Together</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? I&apos;m always excited to work on interesting projects and collaborate with amazing people.
-          </p>
+    <section id="contact" className="py-16 md:py-24 bg-yellow-300 dark:bg-zinc-900">
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 md:mb-16">
+        <div className="bg-indigo-600 dark:bg-indigo-500 text-white border-4 border-black dark:border-white px-6 py-4 md:px-10 md:py-6 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] inline-block">
+          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
+            Let&apos;s Work Together
+          </h2>
         </div>
+        <p className="mt-6 text-xl md:text-2xl text-zinc-800 dark:text-zinc-200 font-bold max-w-3xl">
+          Ready to bring your ideas to life? I&apos;m always excited to work on interesting projects and collaborate with amazing people.
+        </p>
+      </div>
 
+      <div className="max-w-4xl mx-auto px-4 md:px-8">
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="mb-12 md:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label htmlFor="name" className="block text-base md:text-lg font-black text-zinc-900 dark:text-zinc-100 mb-3 uppercase tracking-wider">
                 Name *
               </label>
               <input
@@ -79,13 +83,13 @@ export default function ContactSection() {
                 required
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border-2 border-zinc-200 dark:border-zinc-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
+                className="w-full px-6 py-4 border-4 border-black dark:border-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] focus:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] dark:focus:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] focus:-translate-y-1 transition-all bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-lg md:text-xl font-bold"
                 placeholder="Your full name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+              <label htmlFor="email" className="block text-base md:text-lg font-black text-zinc-900 dark:text-zinc-100 mb-3 uppercase tracking-wider">
                 Email *
               </label>
               <input
@@ -95,42 +99,42 @@ export default function ContactSection() {
                 required
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border-2 border-zinc-200 dark:border-zinc-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
+                className="w-full px-6 py-4 border-4 border-black dark:border-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] focus:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] dark:focus:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] focus:-translate-y-1 transition-all bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-lg md:text-xl font-bold"
                 placeholder="your.email@example.com"
               />
             </div>
           </div>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+          <div className="mb-6">
+            <label htmlFor="message" className="block text-base md:text-lg font-black text-zinc-900 dark:text-zinc-100 mb-3 uppercase tracking-wider">
               Message *
             </label>
             <textarea
               id="message"
               name="message"
               required
-              rows={5}
+              rows={6}
               value={formData.message}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border-2 border-zinc-200 dark:border-zinc-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors resize-none"
+              className="w-full px-6 py-4 border-4 border-black dark:border-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] focus:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] dark:focus:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] focus:-translate-y-1 transition-all resize-none bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-lg md:text-xl font-bold"
               placeholder="Tell me about your project or idea..."
             />
           </div>
 
-          <div className="text-center">
+          <div className="text-center space-y-6">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white border-4 border-black dark:border-white shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-xl md:text-2xl font-black uppercase tracking-wider"
             >
               {isSubmitting ? (
                 <>
-                  <Icon icon="solar:loading-outline" width={20} height={20} className="animate-spin" />
+                  <Icon icon="solar:loading-outline" width={24} height={24} className="animate-spin" />
                   Sending...
                 </>
               ) : (
                 <>
-                  <Icon icon="solar:letter-outline" width={20} height={20} />
+                  <Icon icon="solar:letter-outline" width={24} height={24} />
                   Send Message
                 </>
               )}
@@ -138,34 +142,34 @@ export default function ContactSection() {
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
-              <div className="relative mt-4 p-4 bg-green-50 dark:bg-green-950 border-2 border-green-200 dark:border-green-900">
-                <div className="flex items-center gap-2 text-green-700 dark:text-green-400">
-                  <Icon icon="solar:check-circle-bold" width={20} height={20} />
-                  <span className="font-medium">Message sent successfully!</span>
+              <div className="relative p-6 bg-green-500 dark:bg-green-600 border-4 border-black dark:border-white shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] text-white">
+                <div className="flex items-center gap-3 text-xl md:text-2xl font-black">
+                  <Icon icon="solar:check-circle-bold" width={28} height={28} />
+                  <span>Message sent successfully!</span>
                 </div>
                 <button
                   onClick={() => setSubmitStatus('idle')}
-                  className="absolute top-2 right-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+                  className="absolute top-3 right-3 text-white hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <Icon icon="solar:close-circle-bold" width={20} height={20} />
+                  <Icon icon="solar:close-circle-bold" width={24} height={24} />
                 </button>
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="mt-4 p-4 bg-red-50 dark:bg-red-950 border-2 border-red-200 dark:border-red-900">
-                <div className="flex items-center gap-2 text-red-700 dark:text-red-400">
-                  <Icon icon="solar:close-circle-bold" width={20} height={20} />
-                  <span className="font-medium">Failed to send message</span>
+              <div className="relative p-6 bg-red-500 dark:bg-red-600 border-4 border-black dark:border-white shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] text-white">
+                <div className="flex items-center gap-3 text-xl md:text-2xl font-black">
+                  <Icon icon="solar:close-circle-bold" width={28} height={28} />
+                  <span>Failed to send message</span>
                 </div>
-                <p className="text-red-600 dark:text-red-500 text-sm mt-1">
+                <p className="text-lg md:text-xl mt-2 font-bold">
                   Please try again or contact me directly at lightify6@gmail.com
                 </p>
                 <button
                   onClick={() => setSubmitStatus('idle')}
-                  className="absolute top-2 right-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+                  className="absolute top-3 right-3 text-white hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <Icon icon="solar:close-circle-bold" width={20} height={20} />
+                  <Icon icon="solar:close-circle-bold" width={24} height={24} />
                 </button>
               </div>
             )}
@@ -174,21 +178,21 @@ export default function ContactSection() {
 
         {/* Alternative Contact Methods */}
         <div className="text-center">
-          <p className="text-zinc-600 dark:text-zinc-400 mb-6">Or reach out directly:</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <p className="text-xl md:text-2xl text-zinc-800 dark:text-zinc-200 font-bold mb-8">Or reach out directly:</p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
               href="mailto:lightify6@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 font-medium transition-colors"
+              className="group inline-flex items-center gap-3 px-8 py-5 bg-white dark:bg-zinc-800 border-4 border-black dark:border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:shadow-[12px_12px_0px_0px_rgba(59,130,246,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(59,130,246,1)] hover:-translate-y-1 transition-all text-lg md:text-xl font-black text-zinc-900 dark:text-white uppercase tracking-wider"
             >
-              <Icon icon="solar:letter-bold" width={18} height={18} />
+              <Icon icon="solar:letter-bold" width={24} height={24} />
               Send Email
             </Link>
 
             <Link
               href="/CV.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 font-medium transition-colors"
+              className="group inline-flex items-center gap-3 px-8 py-5 bg-blue-600 dark:bg-blue-500 border-4 border-black dark:border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-all text-lg md:text-xl font-black text-white uppercase tracking-wider"
             >
-              <Icon icon="solar:download-outline" width={18} height={18} />
+              <Icon icon="solar:download-outline" width={24} height={24} />
               Download CV
             </Link>
           </div>

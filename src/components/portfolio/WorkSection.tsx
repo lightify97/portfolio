@@ -42,50 +42,60 @@ const testimonials = [
 
 export default function WorkSection() {
   return (
-    <section id="work" className="py-16">
+    <section id="work" className="py-16 md:py-24 bg-zinc-100 dark:bg-zinc-800 border-b-8 border-black dark:border-white">
       {/* Section Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-3">Work</h2>
-        <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 md:mb-16">
+        <div className="bg-purple-600 dark:bg-purple-500 text-white border-4 border-black dark:border-white px-6 py-4 md:px-10 md:py-6 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] inline-block">
+          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
+            Work
+          </h2>
+        </div>
+        <p className="mt-6 text-xl md:text-2xl text-zinc-800 dark:text-zinc-200 font-bold">
           Featured projects and client testimonials
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Projects */}
-        <div className="mb-16">
-          <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-8 flex items-center gap-2">
-            <Icon icon="solar:folder-bold" className="text-purple-600 dark:text-purple-400" width={24} height={24} />
-            Projects
-          </h3>
-          <div className="space-y-8">
+        <div className="mb-16 md:mb-20">
+          <div className="bg-pink-500 dark:bg-pink-600 text-white border-4 border-black dark:border-white px-6 py-3 md:px-8 md:py-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] inline-block mb-8">
+            <h3 className="text-2xl md:text-3xl font-black uppercase flex items-center gap-3">
+              <Icon icon="solar:folder-bold" width={28} height={28} />
+              Projects
+            </h3>
+          </div>
+          <div className="space-y-8 md:space-y-12">
             {projects.map((project, index) => (
               <div key={index} className="group">
-                <div className="bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
+                <div className="bg-white dark:bg-zinc-900 border-4 border-black dark:border-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] hover:shadow-[16px_16px_0px_0px_rgba(59,130,246,1)] dark:hover:shadow-[16px_16px_0px_0px_rgba(59,130,246,1)] hover:-translate-y-1 transition-all overflow-hidden">
                   {/* Header */}
-                  <div className={`bg-gradient-to-br ${project.gradient} p-6 text-white`}>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2 py-1 bg-white/20 text-xs font-medium">
-                        {project.status}
-                      </span>
+                  <div className={`bg-gradient-to-br ${project.gradient} p-6 md:p-8 text-white`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="bg-black/30 border-2 border-white px-4 py-1">
+                        <span className="text-sm md:text-base font-black uppercase tracking-wider">
+                          {project.status}
+                        </span>
+                      </div>
                     </div>
-                    <h4 className="text-2xl font-bold mb-1">{project.title}</h4>
-                    <p className="text-white/90 font-medium">{project.subtitle}</p>
+                    <h4 className="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight">{project.title}</h4>
+                    <p className="text-xl md:text-2xl font-bold text-white/90">{project.subtitle}</p>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <p className="text-zinc-700 dark:text-zinc-300 mb-6 leading-relaxed">
+                  <div className="p-6 md:p-8">
+                    <p className="text-lg md:text-xl text-zinc-700 dark:text-zinc-300 mb-6 leading-relaxed font-semibold">
                       {project.description}
                     </p>
 
                     <div className="mb-6">
-                      <h5 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-3">Technologies</h5>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="bg-yellow-300 dark:bg-zinc-800 border-4 border-black dark:border-white px-5 py-2 md:px-6 md:py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] inline-block mb-4">
+                        <h5 className="text-xl md:text-2xl font-black uppercase">Technologies</h5>
+                      </div>
+                      <div className="flex flex-wrap gap-3">
                         {project.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-2 border-zinc-200 dark:border-zinc-700"
+                            className="px-4 py-2 text-base md:text-lg font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white border-4 border-black dark:border-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"
                           >
                             {tech}
                           </span>
@@ -96,9 +106,9 @@ export default function WorkSection() {
                     <Link
                       href={project.live}
                       target="_blank"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors text-sm font-medium"
+                      className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white border-4 border-black dark:border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-all text-lg md:text-xl font-black uppercase tracking-wider"
                     >
-                      <Icon icon="solar:arrow-up-outline" width={16} height={16} />
+                      <Icon icon="solar:arrow-up-outline" width={20} height={20} />
                       Live Demo
                     </Link>
                   </div>
@@ -110,42 +120,50 @@ export default function WorkSection() {
 
         {/* Testimonials */}
         <div>
-          <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-8 flex items-center gap-2">
-            <Icon icon="solar:users-group-rounded-bold" className="text-green-600 dark:text-green-400" width={24} height={24} />
-            Testimonials
-          </h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`p-5 bg-white dark:bg-zinc-900 border-2 transition-colors ${
-                  testimonial.featured
-                    ? "border-blue-300 dark:border-blue-700"
-                    : "border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
-                }`}
-              >
-                {testimonial.featured && (
-                  <div className="flex items-center gap-1 text-blue-600 dark:text-blue-400 text-xs font-medium mb-3">
-                    <Icon icon="solar:star-bold" width={14} height={14} />
-                    Featured
-                  </div>
-                )}
-                <blockquote className="text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
-                  &ldquo;{testimonial.content}&rdquo;
-                </blockquote>
-                <div>
-                  <div className="font-semibold text-zinc-900 dark:text-zinc-50">{testimonial.author}</div>
-                  <div className="text-sm text-zinc-600 dark:text-zinc-400">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
-                  {testimonial.project && (
-                    <div className="text-xs text-zinc-500 dark:text-zinc-500 mt-1">
-                      Project: {testimonial.project}
+          <div className="bg-green-500 dark:bg-green-600 text-white border-4 border-black dark:border-white px-6 py-3 md:px-8 md:py-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] inline-block mb-8">
+            <h3 className="text-2xl md:text-3xl font-black uppercase flex items-center gap-3">
+              <Icon icon="solar:users-group-rounded-bold" width={28} height={28} />
+              Testimonials
+            </h3>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {testimonials.map((testimonial, index) => {
+              const testimonialColors = [
+                'bg-blue-50 dark:bg-zinc-900 border-blue-600 dark:border-blue-500',
+                'bg-green-50 dark:bg-zinc-900 border-green-600 dark:border-green-500',
+              ];
+              const testimonialColor = testimonial.featured
+                ? 'bg-yellow-300 dark:bg-zinc-900 border-yellow-500 dark:border-yellow-500'
+                : testimonialColors[index % testimonialColors.length];
+
+              return (
+                <div
+                  key={index}
+                  className={`p-6 md:p-8 border-4 border-black dark:border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:shadow-[12px_12px_0px_0px_rgba(59,130,246,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(59,130,246,1)] hover:-translate-y-1 transition-all ${testimonialColor} border-t-8`}
+                >
+                  {testimonial.featured && (
+                    <div className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-4 py-2 inline-block mb-4 shadow-[4px_4px_0px_0px_rgba(234,179,8,1)] dark:shadow-[4px_4px_0px_0px_rgba(59,130,246,1)]">
+                      <Icon icon="solar:star-bold" width={18} height={18} className="text-yellow-300 dark:text-yellow-500" />
+                      <span className="text-sm font-black uppercase tracking-wider">Featured</span>
                     </div>
                   )}
+                  <blockquote className="text-lg md:text-xl text-zinc-800 dark:text-zinc-200 mb-6 leading-relaxed font-bold">
+                    &ldquo;{testimonial.content}&rdquo;
+                  </blockquote>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-white mb-1">{testimonial.author}</div>
+                    <div className="text-base md:text-lg font-bold text-zinc-700 dark:text-zinc-400">
+                      {testimonial.role}, {testimonial.company}
+                    </div>
+                    {testimonial.project && (
+                      <div className="text-sm md:text-base font-bold text-zinc-600 dark:text-zinc-500 mt-2 uppercase tracking-wider">
+                        Project: {testimonial.project}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
