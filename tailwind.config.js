@@ -46,6 +46,9 @@ module.exports = {
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],
 			},
+			borderRadius: {
+				'none': '0px',
+			},
 			animation: {
 				"fade-in": "fade-in 0.6s ease-out",
 			},

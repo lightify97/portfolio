@@ -64,7 +64,7 @@ export default function TechStackSection() {
               {techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-200"
+                  className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-zinc-400 transition-colors"
                 >
                   <Icon icon={tech.icon} width={36} height={36} />
                   <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100 text-center">{tech.name}</span>

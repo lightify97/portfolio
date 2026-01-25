@@ -61,11 +61,11 @@ export default function WorkSection() {
           <div className="space-y-8">
             {projects.map((project, index) => (
               <div key={index} className="group">
-                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
+                <div className="bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
                   {/* Header */}
                   <div className={`bg-gradient-to-br ${project.gradient} p-6 text-white`}>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2 py-1 bg-white/20 rounded-full text-xs font-medium">
+                      <span className="px-2 py-1 bg-white/20 text-xs font-medium">
                         {project.status}
                       </span>
                     </div>
@@ -85,7 +85,7 @@ export default function WorkSection() {
                         {project.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-lg border border-zinc-200 dark:border-zinc-700"
+                            className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-2 border-zinc-200 dark:border-zinc-700"
                           >
                             {tech}
                           </span>
@@ -96,7 +96,7 @@ export default function WorkSection() {
                     <Link
                       href={project.live}
                       target="_blank"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors text-sm font-medium"
                     >
                       <Icon icon="solar:arrow-up-outline" width={16} height={16} />
                       Live Demo
@@ -118,7 +118,7 @@ export default function WorkSection() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`p-5 bg-white dark:bg-zinc-900 border rounded-lg transition-colors ${
+                className={`p-5 bg-white dark:bg-zinc-900 border-2 transition-colors ${
                   testimonial.featured
                     ? "border-blue-300 dark:border-blue-700"
                     : "border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"

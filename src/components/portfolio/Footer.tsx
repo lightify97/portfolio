@@ -2,9 +2,9 @@
 
 export default function Footer() {
   return (
-    <footer className="py-8 border-t border-gray-300/50 dark:border-gray-800/50">
-      <div className="text-center text-gray-600 dark:text-gray-400 text-sm">
-        <p>© 2025 Muhammad Ramazan. Built with Next.js, Tailwind CSS, and Framer Motion</p>
+    <footer className="py-8 border-t-2 border-zinc-300 dark:border-zinc-800">
+      <div className="text-center text-zinc-600 dark:text-zinc-400 text-sm">
+        <p>© 2025 Muhammad Ramazan. Built with Next.js, Tailwind CSS, and TypeScript</p>
       </div>
     </footer>
   );

@@ -85,8 +85,8 @@ export default function ExperienceSection() {
           <div className="space-y-8">
             {experience.map((exp, index) => (
               <div key={index} className="relative pl-8 pb-8 border-l-2 border-zinc-200 dark:border-zinc-800 last:pb-0">
-                {/* Timeline dot */}
-                <div className="absolute left-0 top-0 w-4 h-4 bg-blue-600 dark:bg-blue-500 rounded-full -translate-x-[9px]" />
+                {/* Timeline dot - sharp square for brutalist design */}
+                <div className="absolute left-0 top-0 w-4 h-4 bg-blue-600 dark:bg-blue-500 -translate-x-[8px]" />
 
                 <div className="space-y-4">
                   <div>
@@ -105,7 +105,7 @@ export default function ExperienceSection() {
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300">
-                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-green-500 mt-2 flex-shrink-0" />
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -121,7 +121,7 @@ export default function ExperienceSection() {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-lg border border-zinc-200 dark:border-zinc-700"
+                          className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-2 border-zinc-200 dark:border-zinc-700"
                         >
                           {tech}
                         </span>
@@ -144,7 +144,7 @@ export default function ExperienceSection() {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="p-5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
+                className="p-5 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
               >
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -162,7 +162,7 @@ export default function ExperienceSection() {
                     {cert.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2 py-0.5 text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded border border-zinc-200 dark:border-zinc-700"
+                        className="px-2 py-0.5 text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-2 border-zinc-200 dark:border-zinc-700"
                       >
                         {skill}
                       </span>

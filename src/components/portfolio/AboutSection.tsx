@@ -50,12 +50,12 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Stats Grid */}
+        {/* Stats Grid - Brutalist sharp rectangles */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-center"
+              className="p-4 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 text-center"
             >
               <div className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-1">{stat.value}</div>
               <div className="text-sm text-zinc-600 dark:text-zinc-400">{stat.label}</div>
@@ -63,7 +63,7 @@ export default function AboutSection() {
           ))}
         </div>
 
-        {/* Skills */}
+        {/* Skills - Sharp rectangular tags */}
         <div className="mb-12">
           <h4 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-4 flex items-center gap-2">
             <Icon icon="solar:lightning-bold" className="text-yellow-500" width={20} height={20} />
@@ -73,7 +73,7 @@ export default function AboutSection() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 text-sm font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-lg border border-zinc-200 dark:border-zinc-700"
+                className="px-3 py-1.5 text-sm font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-2 border-zinc-200 dark:border-zinc-700"
               >
                 {skill}
               </span>
@@ -81,8 +81,8 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Availability */}
-        <div className="p-6 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-900 rounded-lg">
+        {/* Availability - Sharp rectangle */}
+        <div className="p-6 bg-green-50 dark:bg-green-950 border-2 border-green-200 dark:border-green-900">
           <div className="flex items-start gap-4">
             <Icon icon="solar:rocket-bold" className="text-green-600 dark:text-green-400 mt-1" width={24} height={24} />
             <div>

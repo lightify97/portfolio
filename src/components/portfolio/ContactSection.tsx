@@ -79,7 +79,7 @@ export default function ContactSection() {
                 required
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
+                className="w-full px-4 py-3 border-2 border-zinc-200 dark:border-zinc-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
                 placeholder="Your full name"
               />
             </div>
@@ -95,7 +95,7 @@ export default function ContactSection() {
                 required
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
+                className="w-full px-4 py-3 border-2 border-zinc-200 dark:border-zinc-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
               rows={5}
               value={formData.message}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors resize-none"
+              className="w-full px-4 py-3 border-2 border-zinc-200 dark:border-zinc-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 transition-colors resize-none"
               placeholder="Tell me about your project or idea..."
             />
           </div>
@@ -121,7 +121,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>
@@ -138,7 +138,7 @@ export default function ContactSection() {
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
-              <div className="relative mt-4 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-900 rounded-lg">
+              <div className="relative mt-4 p-4 bg-green-50 dark:bg-green-950 border-2 border-green-200 dark:border-green-900">
                 <div className="flex items-center gap-2 text-green-700 dark:text-green-400">
                   <Icon icon="solar:check-circle-bold" width={20} height={20} />
                   <span className="font-medium">Message sent successfully!</span>
@@ -153,7 +153,7 @@ export default function ContactSection() {
             )}
 
             {submitStatus === 'error' && (
-              <div className="mt-4 p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-900 rounded-lg">
+              <div className="mt-4 p-4 bg-red-50 dark:bg-red-950 border-2 border-red-200 dark:border-red-900">
                 <div className="flex items-center gap-2 text-red-700 dark:text-red-400">
                   <Icon icon="solar:close-circle-bold" width={20} height={20} />
                   <span className="font-medium">Failed to send message</span>
@@ -178,7 +178,7 @@ export default function ContactSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="mailto:lightify6@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-lg font-medium transition-colors shadow-md"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 font-medium transition-colors"
             >
               <Icon icon="solar:letter-bold" width={18} height={18} />
               Send Email
@@ -186,7 +186,7 @@ export default function ContactSection() {
 
             <Link
               href="/CV.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-lg font-medium transition-colors shadow-md"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 font-medium transition-colors"
             >
               <Icon icon="solar:download-outline" width={18} height={18} />
               Download CV
