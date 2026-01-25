@@ -7,39 +7,39 @@ export default function Navigation() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="fixed top-0 md:top-4 w-full z-50">
-      <div className="md:max-w-fit md:border-2 mx-auto px-7 py-2 bg-zinc-200/80 dark:bg-zinc-900/80 backdrop-blur-xl">
-        <div className="flex justify-between items-center gap-10">
-          <div className="text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent">
-            MR
-          </div>
-          <div className="flex items-center space-x-8">
-            <div className="hidden md:flex items-center space-x-8">
-              {["About", "Stack", "Experience", "Work", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors duration-300 text-sm font-medium"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-800 dark:hover:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600 transition-all duration-300"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Icon icon="solar:sun-bold" className="text-yellow-500" width={20} height={20} />
-              ) : (
-                <Icon icon="solar:moon-bold" className="text-blue-500" width={20} height={20} />
-              )}
-            </button>
-          </div>
+    <nav className="fixed top-0 left-0 w-full z-50 p-4 md:p-6">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo - with hard shadow */}
+        <div className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 shadow-[6px_6px_0px_0px_rgba(234,179,8,1)] dark:shadow-[6px_6px_0px_0px_rgba(59,130,246,1)]">
+          <span className="text-xl md:text-2xl font-black uppercase tracking-tighter">MR</span>
         </div>
+
+        {/* Nav links - desktop */}
+        <div className="hidden md:flex items-center gap-4">
+          {["About", "Stack", "Experience", "Work", "Contact"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="bg-white dark:bg-zinc-800 border-4 border-black dark:border-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-[6px_6px_0px_0px_rgba(59,130,246,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(59,130,246,1)] hover:-translate-y-0.5 transition-all text-sm md:text-base font-bold text-black dark:text-white uppercase tracking-wider"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+
+        {/* Theme toggle - brutalist style */}
+        <button
+          onClick={toggleTheme}
+          className="bg-blue-600 dark:bg-blue-500 border-4 border-black dark:border-white px-4 py-2 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-all flex items-center justify-center"
+          aria-label="Toggle theme"
+        >
+          {theme === "dark" ? (
+            <Icon icon="solar:sun-bold" className="text-yellow-300" width={24} height={24} />
+          ) : (
+            <Icon icon="solar:moon-bold" className="text-white" width={24} height={24} />
+          )}
+        </button>
       </div>
     </nav>
   );
-} 
+}
