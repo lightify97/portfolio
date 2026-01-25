@@ -1,5 +1,7 @@
 "use client";
 
+import { Icon } from "@iconify/react";
+
 export default function Footer() {
   return (
     <footer className="relative bg-black dark:bg-white py-12 md:py-16 border-t-8 border-yellow-300 dark:border-zinc-600">
