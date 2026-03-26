@@ -88,7 +88,7 @@ export default function AboutSection() {
   ];
 
   const skills = [
-    "AI Integration", "React", "Next.js", "TypeScript", "Node.js", "Python", "AWS", "UI/UX Design"
+    "TypeScript", "React", "Next.js", "Node.js", "Python", "PostgreSQL", "MongoDB", "AWS", "GCP", "AI & LLM Integration"
   ];
 
   return (
@@ -101,7 +101,7 @@ export default function AboutSection() {
           </h2>
         </div>
         <p className="mt-4 md:mt-6 text-base md:text-xl lg:text-2xl text-zinc-700 dark:text-zinc-300 font-bold">
-          Crafting digital experiences with passion, precision, and purpose
+          Full-Stack Engineer | TypeScript & Python | AI & LLM Integrations
         </p>
       </div>
 
@@ -110,7 +110,7 @@ export default function AboutSection() {
         {/* Introduction */}
         <div className="mb-8 md:mb-12 lg:mb-16">
           <div className="flex items-center gap-2 md:gap-4 mb-4 md:mb-8">
-            <span className="text-3xl md:text-5xl lg:text-6xl">👋</span>
+            <Icon icon="solar:hand-shake-bold" className="text-yellow-500 w-8 h-8 md:w-12 md:h-12 lg:w-14 lg:h-14 flex-shrink-0" />
             <h3 className="text-xl md:text-3xl lg:text-5xl font-black text-black dark:text-white uppercase tracking-tight">
               Hello, I&apos;m Muhammad Ramazan
             </h3>
@@ -122,10 +122,9 @@ export default function AboutSection() {
                 <span className="text-white text-[10px] md:text-xs font-black">1</span>
               </div>
               <p className="bg-blue-50 dark:bg-zinc-800 border-l-4 md:border-l-8 border-blue-600 dark:border-blue-500 px-3 md:px-6 py-2 md:py-4 ml-6 md:ml-8">
-                A passionate <span className="font-black text-blue-600 dark:text-blue-400">Full Stack Developer</span> and
-                <span className="font-black text-purple-600 dark:text-purple-400"> AI enthusiast</span> with
-                <span className="font-black text-green-600 dark:text-green-400"> 5+ years</span> of experience crafting
-                digital experiences that users love.
+                <span className="font-black text-blue-600 dark:text-blue-400">Full-Stack Engineer</span> with a strong end-to-end foundation — from designing
+                <span className="font-black text-purple-600 dark:text-purple-400"> Python and Node.js backends</span> to building performant, data-rich frontends with
+                <span className="font-black text-green-600 dark:text-green-400"> TypeScript and React</span>.
               </p>
             </div>
 
@@ -134,9 +133,8 @@ export default function AboutSection() {
                 <span className="text-white text-[10px] md:text-xs font-black">2</span>
               </div>
               <p className="bg-green-50 dark:bg-zinc-800 border-l-4 md:border-l-8 border-green-600 dark:border-green-500 px-3 md:px-6 py-2 md:py-4 ml-6 md:ml-8">
-                I specialize in building scalable web and mobile applications using React, Next.js, TypeScript,
-                and modern development technologies. I thrive on turning complex problems into elegant solutions
-                that users love.
+                I specialize in scalable architecture, high-throughput data pipelines, and analytical tooling — currently
+                building a next-generation bioinformatics platform at Skygenic.
               </p>
             </div>
 
@@ -145,9 +143,8 @@ export default function AboutSection() {
                 <span className="text-white text-[10px] md:text-xs font-black">3</span>
               </div>
               <p className="bg-purple-50 dark:bg-zinc-800 border-l-4 md:border-l-8 border-purple-600 dark:border-purple-500 px-3 md:px-6 py-2 md:py-4 ml-6 md:ml-8">
-                Beyond work, I love exploring emerging technologies, contributing to open-source projects, and
-                mentoring aspiring developers. I believe in continuous learning and staying at the forefront of
-                technological innovation.
+                I care deeply about clean, maintainable code and take ownership from planning through deployment —
+                whether that&apos;s a greenfield feature or a platform-wide architectural shift.
               </p>
             </div>
           </div>

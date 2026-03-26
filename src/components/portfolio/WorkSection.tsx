@@ -6,9 +6,18 @@ import { useEffect, useRef, useState } from "react";
 
 const projects = [
   {
+    title: "Skygenic Platform",
+    subtitle: "Bioinformatics Analytics Platform",
+    description: "A full-stack bioinformatics analytics platform for exploring Nextflow pipeline outputs through interactive visualizations, session workspaces, and Blockly-based pipeline tooling. Supports chart/table/genome/document viewers and streaming large datasets.",
+    tech: ["React", "TypeScript", "Redux Toolkit", "Nx", "Node.js", "Express", "MongoDB", "GCP", "ECharts"],
+    live: "https://skygenic.com",
+    gradient: "from-emerald-500 to-teal-500",
+    status: "Live",
+  },
+  {
     title: "Checkersvip.com",
     subtitle: "Professional Online Checkers Platform",
-    description: "A comprehensive multiplayer American checkers platform designed for competitive play with real-time communication capabilities.",
+    description: "A comprehensive multiplayer American checkers platform designed for competitive play with real-time communication capabilities. In the process of official recognition from the American Checkers Federation.",
     tech: ["Next.js", "Fastify", "Socket.io", "PostgreSQL", "Prisma"],
     live: "https://checkersvip.com",
     gradient: "from-blue-500 to-cyan-500",
@@ -17,8 +26,8 @@ const projects = [
   {
     title: "AskRudy.ai",
     subtitle: "AI-Powered Document Intelligence Platform",
-    description: "An advanced RAG-based AI chatbot that revolutionizes document interaction through multilingual translation and intelligent conversation capabilities.",
-    tech: ["Next.js", "Vercel AI SDK", "LangChain", "OpenAI", "Pinecone"],
+    description: "A RAG-based AI chatbot for multilingual document translation and chat. Includes OpenAI multimodal capability for screenshot-based questions and text extraction.",
+    tech: ["Next.js", "Vercel AI SDK", "LangChain", "OpenAI", "Firebase"],
     live: "https://askrudy.ai",
     gradient: "from-purple-500 to-pink-500",
     status: "Live",

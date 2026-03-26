@@ -170,7 +170,7 @@ export default function HeroSection() {
         <div className="mb-8 md:mb-12 text-center">
           <div className="bg-red-500 dark:bg-red-600 text-white px-4 py-2 md:px-6 md:py-4 lg:px-10 lg:py-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] md:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:md:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] inline-block transform -rotate-1">
             <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black uppercase">
-              Full Stack Developer
+              Full-Stack Engineer
             </span>
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function HeroSection() {
           </div>
           <div className="bg-black dark:bg-white text-white dark:text-black px-6 py-6 md:px-12 md:py-8 shadow-[12px_12px_0px_0px_rgba(234,179,8,1)] dark:shadow-[12px_12px_0px_0px_rgba(59,130,246,1)] max-w-4xl mx-auto relative">
             <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-black px-2 py-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">!</div>
-            <KineticTagline text="Crafting exceptional digital experiences with clean code and thoughtful design" />
+            <KineticTagline text="Building scalable platforms with TypeScript, Python, and AI — from backend architecture to data-rich frontends" />
           </div>
         </div>
 
@@ -248,7 +248,7 @@ export default function HeroSection() {
             </Link>
 
             <Link
-              href="mailto:lightify6@gmail.com"
+              href="mailto:mramazan1@yahoo.com"
               className="group bg-green-500 dark:bg-green-600 border-3 md:border-4 border-black dark:border-white px-4 md:px-8 py-2 md:py-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:md:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] md:hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:md:hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 hover:-rotate-1 transition-all flex items-center gap-2 md:gap-3 relative"
             >
               <span className="absolute -top-1.5 md:-top-2 -left-1.5 md:-left-2 bg-red-500 text-white text-[8px] md:text-[10px] font-black px-1 md:px-1.5">MAIL</span>

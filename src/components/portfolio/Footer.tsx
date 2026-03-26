@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Main footer text with brutalist styling */}
           <div className="bg-yellow-300 dark:bg-zinc-800 border-3 md:border-4 border-white dark:border-black px-4 md:px-8 py-2 md:py-4 shadow-[4px_4px_0px_0px_rgba(234,179,8,1)] dark:shadow-[4px_4px_0px_0px_rgba(59,130,246,1)] md:shadow-[8px_8px_0px_0px_rgba(234,179,8,1)] dark:md:shadow-[8px_8px_0px_0px_rgba(59,130,246,1)] inline-block">
             <p className="text-base md:text-xl lg:text-3xl font-black text-black dark:text-white uppercase tracking-tighter">
-              © 2025 Muhammad Ramazan
+              © 2026 Muhammad Ramazan
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:lightify6@gmail.com"
+              href="mailto:mramazan1@yahoo.com"
               className="group bg-green-500 dark:bg-green-600 border-3 md:border-4 border-white dark:border-black px-3 md:px-6 py-1.5 md:py-3 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] dark:md:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:md:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-all flex items-center gap-1.5 md:gap-2"
             >
               <Icon icon="solar:letter-bold" width={16} height={16} className="w-4 h-4 md:w-6 md:h-6 text-white" />

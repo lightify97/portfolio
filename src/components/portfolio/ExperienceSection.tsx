@@ -5,30 +5,31 @@ import { useEffect, useRef, useState } from "react";
 
 const experience = [
   {
-    role: "Software Developer",
-    company: "Upwork",
-    period: "Jan 2020 — Present",
-    description: "Delivered high-quality projects across diverse domains, including web and mobile applications, API development, and cloud integrations (AWS, GCP).",
+    role: "Full-Stack Developer",
+    company: "Skygenic",
+    period: "Aug 2025 — Present",
+    description: "Building a next-generation bioinformatics analytics platform end-to-end — from Python and Node.js backends to a TypeScript/React frontend — with a focus on scalable architecture, high-performance data pipelines, and rich analytical tooling.",
     achievements: [
-      "Achieved Top-Rated status with a 91% job success score",
-      "Completed 10+ projects focusing on scalable solutions",
-      "Consistently praised for skillfulness, quick learning, and strong communication",
-      "Earned repeated engagements through reliability and expertise"
+      "Led platform modernization to a scalable TypeScript monorepo with centralized state/data orchestration",
+      "Designed and delivered end-to-end analytical workflows connecting data ingestion, processing, and visualization",
+      "Implemented high-throughput data streaming and retrieval patterns for large datasets",
+      "Built robust workspace/session capabilities enabling reliable multi-view analysis",
+      "Executed major performance optimizations cutting unnecessary re-renders under real-time workloads"
     ],
-    technologies: ["JavaScript", "Python", "Node.js", "AWS", "GCP", "OpenAI API", "LangChain"]
+    technologies: ["TypeScript", "React", "Redux Toolkit", "Node.js", "Express", "FastAPI", "MongoDB", "GCP", "ECharts", "Nx"]
   },
   {
-    role: "HIMS Master Trainer / PACS Specialist",
-    company: "Public Health Organization, Islamabad",
-    period: "Jul 2019 — Present",
-    description: "Spearheaded organizational transformation from paper-based manual systems to completely integrated HIMS and PACS (Picture Archiving and Communication System).",
+    role: "Software Developer",
+    company: "Upwork",
+    period: "Mar 2022 — Aug 2025",
+    description: "Delivered high-quality projects across diverse domains, including web and mobile applications, API development, and cloud integrations (AWS, GCP).",
     achievements: [
-      "Led integration of 45+ radiology machines (CT, MRI, X-Ray, Ultrasound)",
-      "Ensured active monitoring for integration issues",
-      "Acted as master trainer and led support team",
-      "Communicated issues and requirements to backend teams"
+      "Achieved Top-Rated status, praised for skillfulness and rapid learning",
+      "Completed multiple projects focusing on scalable solutions using JavaScript, Python, and Node.js",
+      "Gained hands-on experience with AI integrations (OpenAI API, LangChain) and cloud platforms",
+      "Earned repeated engagements through reliability, expertise, and strong communication"
     ],
-    technologies: ["HIMS", "PACS", "System Integration", "Healthcare IT", "Training & Support"]
+    technologies: ["JavaScript", "Python", "Node.js", "Next.js", "AWS", "GCP", "OpenAI API", "LangChain"]
   }
 ];
 
