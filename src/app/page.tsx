@@ -21,7 +21,8 @@ export default function Portfolio() {
       {/* Navigation */}
       <Navigation />
 
-      <div className="max-w-6xl mx-auto px-6 pt-24">
+      {/* Main content */}
+      <div className="px-4 md:px-6 lg:ml-32 lg:pl-8 pb-20 lg:pb-0">
         {/* Hero Section */}
         <HeroSection />
 

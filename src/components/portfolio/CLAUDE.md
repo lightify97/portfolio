@@ -7,5 +7,31 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #60 | 12:56 AM | 🔄 | Complete minimalist portfolio redesign committed to worktree | ~480 |
+| #214 | 11:59 PM | 🔄 | Removed fixed width constraint from vertical navigation labels | ~219 |
+| #210 | 11:56 PM | 🟣 | Integrated KineticTypewriterNav design into main Navigation component | ~410 |
+| #205 | 1:55 PM | 🔴 | Fixed logo shimmer animation in Navigation component using inline event handlers | ~334 |
+
+### Jan 27, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #306 | 8:55 AM | ✅ | Removed bottom border from AboutSection | ~207 |
+| #303 | 8:40 AM | ✅ | Removed scroll percentage display from desktop vertical navigation | ~259 |
+| #299 | 12:46 AM | 🔄 | Enhanced ExperienceSection responsive design with lg breakpoint | ~326 |
+| #296 | 12:45 AM | 🔵 | Examined ExperienceSection component structure and animation patterns | ~332 |
+| #295 | " | 🔵 | Examined TechStackSection component with industrial brutalist card design | ~376 |
+| #293 | " | 🔄 | Improved mobile responsiveness of WorkSection with responsive sizing | ~384 |
+| #292 | " | 🔄 | Enhanced mobile responsiveness of testimonial cards with progressive sizing | ~313 |
+| #290 | 12:44 AM | 🔄 | Improved AnimatedStat responsive typography in AboutSection | ~347 |
+| #284 | 12:42 AM | 🔄 | Converted Icon arrow sizing from props to Tailwind classes in HeroSection.tsx | ~249 |
+| #280 | 12:40 AM | 🟣 | Improved HeroSection mobile responsiveness with responsive spacing and typography | ~377 |
+| #279 | 12:39 AM | ✅ | Refactored hero section name typography with responsive sizing | ~371 |
+| #278 | " | ✅ | Made HeroSection name container responsive with scaled borders and shadows | ~251 |
+| #277 | " | 🔄 | Optimized HeroSection spacing and hid decorative elements on mobile | ~309 |
+| #276 | " | 🔄 | Refactored KineticTagline component for better responsive text sizing and spacing | ~306 |
+| #230 | 12:18 AM | 🔄 | Refactored tech stack card icon styling from colored background to colored icons | ~359 |
+| #228 | 12:15 AM | 🔵 | Examined TechStackSection component with metro-style tabs and industrial card design | ~415 |
+| #227 | 12:14 AM | 🔵 | Examined TechStackSection component card hover effects and status indicators | ~310 |
+| #225 | 12:07 AM | 🔄 | Reduced vertical padding on Navigation container | ~201 |
+| #216 | 12:00 AM | 🔄 | Removed fixed dimensions from vertical text label container in Navigation.tsx | ~294 |
 </claude-mem-context>

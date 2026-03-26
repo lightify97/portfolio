@@ -7,7 +7,23 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #60 | 12:56 AM | 🔄 | Complete minimalist portfolio redesign committed to worktree | ~480 |
-| #58 | 12:55 AM | 🔄 | Cleaned up globals.css by removing all custom animations and updating color system | ~420 |
-| #54 | 12:53 AM | 🔄 | Updated main page structure with consolidated sections | ~312 |
+| #187 | 1:29 PM | ✅ | Reverted from KineticTypewriterNav back to original Navigation component | ~224 |
+| #186 | 1:28 PM | ✅ | Reverted to original horizontal Navigation component | ~187 |
+| #185 | " | 🔴 | Fixed component name mismatch in page.tsx navigation usage | ~127 |
+| #182 | 1:21 PM | ✅ | Switched navigation to KineticControl fusion variant combining typewriter and control deck designs | ~233 |
+| #181 | " | ✅ | Switched navigation variant from KineticTypewriterNav to KineticControlNav | ~156 |
+| #173 | 1:19 PM | ✅ | Switched navigation variant from ControlDeck to KineticTypewriter | ~192 |
+| #172 | " | ✅ | Switched navigation variant from ControlDeckNav to KineticTypewriterNav | ~76 |
+| #171 | 1:17 PM | ✅ | Switched navigation variant from TheStackNav back to ControlDeckNav | ~259 |
+| #170 | " | ✅ | Swapped navigation variant from TheStackNav to ControlDeckNav for testing | ~207 |
+| #168 | 1:16 PM | ✅ | Switched active navigation from BarcodeScannerNav to TheStackNav | ~147 |
+| #167 | 1:15 PM | ✅ | Switched navigation variant from ControlDeck to BarcodeScanner | ~203 |
+| #166 | " | ✅ | Swapped navigation variant from ControlDeckNav to BarcodeScannerNav for testing | ~180 |
+| #164 | 1:13 PM | ✅ | Switched active navigation from KineticTypewriterNav to ControlDeckNav | ~158 |
+| #163 | 1:11 PM | ✅ | Swapped navigation variant from FloatingMonolithNav to KineticTypewriterNav for testing | ~215 |
+| #162 | " | ✅ | Switched navigation variant in main page from FloatingMonolithNav to KineticTypewriterNav | ~215 |
+| #156 | 1:09 PM | ✅ | Adjusted main content layout with left margin for fixed vertical navigation | ~215 |
+| #153 | " | 🟣 | Integrated FloatingMonolithNav as active navigation variant | ~210 |
+| #152 | " | 🔵 | Examined main portfolio page structure and Navigation component usage | ~288 |
+| #151 | " | 🟣 | Integrated FloatingMonolithNav vertical navigation into main portfolio page | ~202 |
 </claude-mem-context>
