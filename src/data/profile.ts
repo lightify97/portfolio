@@ -8,11 +8,11 @@ export const profile = {
   email: "mramazan1@yahoo.com",
   siteUrl: "https://mramazan.dev",
   cvUrl: "/CV.pdf",
-  availability: "Available for freelance projects",
+  availability: "Open to new opportunities",
   headline:
     "I build complete products, from the data layer to the interface, and make sure they stay reliable as they grow.",
   summary:
-    "Full stack engineer with 4+ years of experience shipping web applications, APIs and AI-powered features. I currently work at Skygenic on a biomedical knowledge-graph platform, and I'm a Top Rated freelancer on Upwork, where clients come back for reliable delivery and clear communication.",
+    "Full stack engineer with 4+ years of experience shipping web applications, APIs and AI-powered features. I currently work at Skygenic on a bioinformatics analytics platform. Before that, I spent three years as a Top Rated freelancer on Upwork, where clients came back for reliable delivery and clear communication.",
   socials: {
     github: "https://github.com/lightify97",
     linkedin: "https://www.linkedin.com/in/m-ramazan",
@@ -43,7 +43,7 @@ export const experience: Role[] = [
   {
     title: "Full Stack Engineer",
     company: "Skygenic",
-    period: "Oct 2025 — Present",
+    period: "Aug 2025 — Present",
     context: "Bioinformatics analytics and knowledge-graph platform for testing scientific hypotheses.",
     groups: [
       {
@@ -86,7 +86,7 @@ export const experience: Role[] = [
     title: "Full Stack Developer (Freelance)",
     company: "Upwork",
     companyUrl: "https://www.upwork.com/freelancers/~01efb11e04a657fbaf",
-    period: "Mar 2022 — Present",
+    period: "Mar 2022 — Aug 2025",
     context: "Web applications, APIs and AI features for startups and small businesses.",
     highlights: [
       "Delivered 10+ web, mobile, API and cloud projects for clients on AWS and GCP.",
@@ -111,7 +111,7 @@ export const skills: { group: string; items: string[] }[] = [
   },
   {
     group: "Distributed systems",
-    items: ["Temporal", "RabbitMQ", "WebSockets", "SSE", "Transactional outbox"],
+    items: ["Temporal", "RabbitMQ", "WebSockets", "SSE"],
   },
   {
     group: "Data",
