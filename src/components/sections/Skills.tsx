@@ -3,7 +3,7 @@ import { skills } from "@/data/profile";
 
 export default function Skills() {
   return (
-    <Section id="skills" index="03" title="Skills" intro="Python and TypeScript at the core, with the data and infrastructure tools around them.">
+    <Section id="skills" index="02" title="Skills" intro="Comfortable across the stack, from the interface down to the data and infrastructure.">
       <dl data-reveal className="divide-y divide-line border-y border-line">
         {skills.map((row) => (
           <div key={row.group} className="grid gap-3 py-5 md:grid-cols-[200px_1fr] md:gap-10">

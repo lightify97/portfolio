@@ -3,16 +3,16 @@
 
 export const profile = {
   name: "Muhammad Ramazan",
-  role: "Backend Software Engineer",
+  role: "Full Stack Software Engineer",
   location: "Islamabad, Pakistan",
   email: "mramazan1@yahoo.com",
   siteUrl: "https://mramazan.dev",
   cvUrl: "/CV.pdf",
   availability: "Available for freelance projects",
   headline:
-    "I build backend systems that hold up in production: data pipelines, distributed workflows and LLM-powered products.",
+    "I build complete products, from the data layer to the interface, and make sure they stay reliable as they grow.",
   summary:
-    "Backend engineer with 4+ years of experience. I'm currently building a biomedical knowledge-graph platform at Skygenic in Python, on Temporal, Neo4j and PostgreSQL. I also work across the stack in TypeScript and React, and I'm a Top Rated freelancer on Upwork, known for reliable delivery and clear communication.",
+    "Full stack engineer with 4+ years of experience shipping web applications, APIs and AI-powered features. I currently work at Skygenic on a biomedical knowledge-graph platform, and I'm a Top Rated freelancer on Upwork, where clients come back for reliable delivery and clear communication.",
   socials: {
     github: "https://github.com/lightify97",
     linkedin: "https://www.linkedin.com/in/m-ramazan",
@@ -21,10 +21,9 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "4+ yrs", label: "Building production software" },
-  { value: "40M+", label: "Records in a crash-safe ETL" },
-  { value: "0 → 93%", label: "Cross-source gene matching" },
-  { value: "Top Rated", label: "On Upwork, with repeat clients" },
+  { value: "4+ years", label: "Building production software" },
+  { value: "10+ projects", label: "Delivered for clients" },
+  { value: "Top Rated", label: "On Upwork" },
 ];
 
 export type HighlightGroup = { title: string; items: string[] };
@@ -42,131 +41,89 @@ export type Role = {
 
 export const experience: Role[] = [
   {
-    title: "Software Engineer",
+    title: "Full Stack Engineer",
     company: "Skygenic",
     period: "Oct 2025 — Present",
-    context: "Biomedical knowledge-graph platform for testing scientific hypotheses.",
+    context: "Bioinformatics analytics and knowledge-graph platform for testing scientific hypotheses.",
     groups: [
       {
-        title: "Architecture & performance",
+        title: "Product & frontend",
+        items: [
+          "Designed, built and deployed a full-stack analytics platform for exploring pipeline outputs through interactive visualizations, session workspaces and visual pipeline tooling.",
+          "Built React / TypeScript dashboards, a visual pipeline builder and an AI chat UI.",
+          "Migrated the platform to an Nx monorepo with centralized state management, improving velocity and maintainability.",
+          "Led performance work across frontend and backend that removed unnecessary re-renders and kept the app stable under real-time streaming.",
+        ],
+      },
+      {
+        title: "Backend & data",
         items: [
           "Architected the backend on Temporal, orchestrating hypothesis evaluation across five Python services.",
-          "Cut Temporal payloads 20× with a gzip codec, turning failing multi-scan requests into 2.5 s runs.",
-          "Scaled Neo4j graph analytics to 92K results in 21 s with parallel Temporal child workflows.",
-          "Added a transactional outbox and contract tests that caught silent cross-service failures.",
-        ],
-      },
-      {
-        title: "Data & knowledge graph",
-        items: [
-          "Built a crash-safe Temporal ETL for 40M+ records, lifting cross-source gene matching from 0% to 93%.",
-          "Designed the graph data model with a bioinformatician, unifying 100 relationship types into 61.",
-        ],
-      },
-      {
-        title: "APIs & AI",
-        items: [
+          "Built a crash-safe ETL for 40M+ records and designed the graph data model with a bioinformatician.",
+          "Implemented streaming and retrieval patterns for large CSV / TSV datasets, improving latency and responsiveness.",
           "Built the FastAPI / PostgreSQL REST API and closed a cross-tenant data-exposure hole.",
+        ],
+      },
+      {
+        title: "AI features",
+        items: [
           "Shipped LLM features: structured-output reports, a GraphRAG agent, streaming chat and MCP tools.",
         ],
       },
       {
-        title: "Delivery",
+        title: "Reliability & delivery",
         items: [
-          "Ran Docker Compose and Jenkins CI/CD deployments to dev and prod behind an nginx gateway.",
-          "Built React / TypeScript dashboards, a visual pipeline builder and an AI chat UI in an Nx monorepo.",
-          "Wrote design specs, risk assessments and end-to-end performance benchmarks for the team.",
+          "Added observability: status-aware indexing, incremental refresh and operational endpoints for production troubleshooting.",
+          "Delivered access-controlled file operations and artifact lifecycle management.",
+          "Added a transactional outbox and contract tests that caught silent cross-service failures.",
+          "Ran Docker and CI/CD deployments to dev and prod, and wrote design specs and performance benchmarks for the team.",
         ],
       },
     ],
-    tech: ["Python", "Temporal", "Neo4j", "PostgreSQL", "FastAPI", "LangGraph", "React", "Docker", "Jenkins"],
+    tech: ["TypeScript", "React", "Redux Toolkit", "Nx", "Python", "FastAPI", "Node.js", "PostgreSQL", "Neo4j", "Temporal", "GCP", "Docker"],
   },
   {
-    title: "Software Developer (Freelance)",
+    title: "Full Stack Developer (Freelance)",
     company: "Upwork",
     companyUrl: "https://www.upwork.com/freelancers/~01efb11e04a657fbaf",
     period: "Mar 2022 — Present",
-    context: "Independent engineering for startups and small businesses.",
+    context: "Web applications, APIs and AI features for startups and small businesses.",
     highlights: [
-      "Delivered 10+ web, mobile, API and AWS / GCP projects in JavaScript, Python and Node.js.",
-      "Built AI integrations with the OpenAI API and LangChain.",
-      "Earned Top Rated status and repeat clients by clarifying requirements and delivering reliably.",
+      "Delivered 10+ web, mobile, API and cloud projects for clients on AWS and GCP.",
+      "Built scalable APIs, real-time features and complete full-stack products end to end.",
+      "Built AI integrations, including RAG pipelines and LLM-powered workflow automation.",
+      "Worked closely with clients to turn requirements into production features, earning repeat engagements.",
+      "Earned and maintained Top Rated status through reliable delivery and clear communication.",
     ],
-    tech: ["Node.js", "TypeScript", "Next.js", "Python", "OpenAI API", "LangChain", "AWS", "GCP"],
-  },
-  {
-    title: "HIMS Master Trainer / PACS Specialist",
-    company: "Armed Forces Institute of Radiology & Imaging",
-    companyUrl: "https://afiri.org",
-    period: "Jul 2019 — Present",
-    context: "PEMH, Rawalpindi. Hospital information and medical imaging systems.",
-    highlights: [
-      "Led the move from paper records to integrated HIMS / PACS systems as master trainer and support lead.",
-      "Integrated 45+ radiology machines (CT, MRI, X-Ray, Ultrasound) and monitored the integrations.",
-    ],
-  },
-];
-
-export type Project = {
-  name: string;
-  url: string;
-  summary: string;
-  points: string[];
-  tech: string[];
-};
-
-export const projects: Project[] = [
-  {
-    name: "Checkersvip.com",
-    url: "https://checkersvip.com",
-    summary:
-      "A live multiplayer American checkers platform with real-time play and chat, pending approval from the American Checkers Federation.",
-    points: [
-      "Architected the platform from the ground up, frontend to backend",
-      "Real-time game state and chat over Socket.io, backed by Redis",
-      "Drag-and-drop board built with DnDKit",
-    ],
-    tech: ["Next.js", "Tailwind", "Fastify", "Socket.io", "Redis", "PostgreSQL", "Prisma"],
-  },
-  {
-    name: "AskRudy.ai",
-    url: "https://askrudy.ai",
-    summary:
-      "A RAG chatbot for multilingual documents, with translation and screenshot Q&A powered by OpenAI vision.",
-    points: [
-      "Retrieval-augmented answers grounded in uploaded documents",
-      "Screenshot questions answered with OpenAI's multimodal models",
-      "Subscriptions and billing handled with Stripe",
-    ],
-    tech: ["Next.js", "Vercel AI SDK", "LangChain", "OpenAI API", "Firebase", "Stripe"],
+    tech: ["TypeScript", "React", "Next.js", "Node.js", "Python", "FastAPI", "OpenAI API", "LangChain", "AWS", "GCP"],
   },
 ];
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: "Languages", items: ["Python", "TypeScript", "JavaScript", "SQL", "Cypher"] },
+  { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"] },
+  {
+    group: "Frontend",
+    items: ["React", "Next.js", "Redux Toolkit", "Nx", "Vite", "Tailwind", "Material UI", "ECharts", "D3", "Blockly"],
+  },
   {
     group: "Backend",
-    items: ["FastAPI", "SQLAlchemy", "Alembic", "Celery", "Node.js", "Express", "Fastify", "Django", "GraphQL", "Prisma"],
+    items: ["Node.js", "Express", "Fastify", "FastAPI", "Django", "GraphQL", "Prisma", "SQLAlchemy", "Celery", "Socket.io"],
   },
   {
     group: "Distributed systems",
-    items: ["Temporal", "RabbitMQ", "Redis", "Transactional outbox", "SSE", "WebSockets"],
+    items: ["Temporal", "RabbitMQ", "WebSockets", "SSE", "Transactional outbox"],
   },
   {
     group: "Data",
-    items: ["PostgreSQL (pgvector)", "Neo4j (GDS, APOC)", "MySQL", "MongoDB", "Knowledge-graph ETL"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Neo4j", "BigQuery", "Firebase"],
   },
   {
     group: "AI / LLM",
-    items: ["LangGraph", "LangChain", "OpenAI API", "MCP", "RAG", "GraphRAG", "GILDA", "scispaCy"],
-  },
-  {
-    group: "Frontend",
-    items: ["React", "Next.js", "Redux Toolkit", "Nx", "Vite", "Tailwind", "Material UI", "ECharts"],
+    items: ["OpenAI API", "LangChain", "LangGraph", "Vercel AI SDK", "RAG", "MCP"],
   },
   {
     group: "DevOps & testing",
-    items: ["Docker", "Git", "Jenkins", "GitHub Actions", "nginx", "Linux", "AWS", "GCP", "pytest", "Vitest"],
+    items: ["Docker", "AWS", "GCP", "GitHub Actions", "Jenkins", "nginx", "Linux", "Git", "Vitest", "pytest"],
   },
 ];
 
@@ -248,7 +205,6 @@ export const certificates: Certificate[] = [
 
 export const navLinks = [
   { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#credentials", label: "Credentials" },

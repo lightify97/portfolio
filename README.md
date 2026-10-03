@@ -1,13 +1,13 @@
 # mramazan.dev
 
-Personal portfolio of **Muhammad Ramazan**, Backend Software Engineer.
+Personal portfolio of **Muhammad Ramazan**, Full Stack Software Engineer.
 Live at [mramazan.dev](https://mramazan.dev).
 
 Built with Next.js 15 (App Router), TypeScript and Tailwind CSS. The page is statically rendered, supports light and dark themes, and ships very little client-side JavaScript.
 
 ## Editing content
 
-All copy lives in one file: [`src/data/profile.ts`](src/data/profile.ts). Experience, projects, skills, testimonials, education and certifications are plain data, so updating the site rarely means touching a component.
+All copy lives in one file: [`src/data/profile.ts`](src/data/profile.ts). Experience, skills, testimonials, education and certifications are plain data, so updating the site rarely means touching a component.
 
 - **Résumé:** replace `public/CV.pdf` (linked from the header, hero and mobile menu).
 - **Certificates:** add images to `public/certificates/` and reference them from `certificates` in `profile.ts`.

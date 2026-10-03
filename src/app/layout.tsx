@@ -9,7 +9,7 @@ const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono", display: 
 
 const title = `${profile.name} | ${profile.role}`;
 const description =
-  "Backend software engineer building data pipelines, distributed workflows and LLM-powered products with Python, TypeScript, Temporal, Neo4j and PostgreSQL.";
+  "Full stack software engineer building complete web products, from the data layer to the interface, with 4+ years of experience.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
@@ -17,15 +17,13 @@ export const metadata: Metadata = {
   description,
   keywords: [
     profile.name,
-    "Backend Engineer",
+    "Full Stack Engineer",
     "Software Engineer",
-    "Python",
-    "FastAPI",
-    "Temporal",
-    "Neo4j",
-    "PostgreSQL",
     "TypeScript",
-    "LLM",
+    "React",
+    "Next.js",
+    "Python",
+    "Node.js",
     "Islamabad",
   ],
   authors: [{ name: profile.name, url: profile.siteUrl }],

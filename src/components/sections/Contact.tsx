@@ -13,9 +13,9 @@ export default function Contact() {
   return (
     <Section
       id="contact"
-      index="06"
+      index="05"
       title="Contact"
-      intro="Have a backend, data or AI problem worth solving? I'd like to hear about it."
+      intro="Have a product to build or a system to improve? I'd like to hear about it."
     >
       <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-10">
         <div data-reveal className="space-y-6 text-sm">

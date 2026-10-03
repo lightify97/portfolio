@@ -54,12 +54,12 @@ export default function Hero() {
 
         <dl
           data-reveal
-          className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-4"
+          className="mt-20 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col-reverse justify-end bg-surface p-5 sm:p-6">
               <dt className="mt-1.5 text-sm leading-snug text-muted">{stat.label}</dt>
-              <dd className="text-2xl font-semibold tracking-tight sm:text-3xl">{stat.value}</dd>
+              <dd className="text-xl font-semibold tracking-tight">{stat.value}</dd>
             </div>
           ))}
         </dl>

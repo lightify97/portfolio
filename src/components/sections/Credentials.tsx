@@ -4,7 +4,7 @@ import { certificates, education } from "@/data/profile";
 
 export default function Credentials() {
   return (
-    <Section id="credentials" index="05" title="Credentials" intro="Formal education, plus coursework I've completed along the way.">
+    <Section id="credentials" index="04" title="Credentials" intro="Formal education, plus coursework I've completed along the way.">
       <div className="grid gap-12 md:grid-cols-[200px_1fr] md:gap-10">
         <h3 data-reveal className="text-sm font-medium">
           Education
