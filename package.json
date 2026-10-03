@@ -15,7 +15,7 @@
 		"clsx": "^2.1.1",
 		"framer-motion": "^14.0.0",
 		"lucide-react": "^0.511.0",
-		"next": "15.3.2",
+		"next": "15.3.8",
 		"posthog-js": "^1.246.0",
 		"posthog-node": "^4.17.2",
 		"react": "^19.0.0",
