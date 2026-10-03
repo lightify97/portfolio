@@ -1,5 +1,5 @@
 // Single source of truth for the portfolio's content.
-// Keep this in sync with the master CV (public/CV.pdf).
+// public/CV.pdf is generated from this file: run `npm run cv` after editing it.
 
 export const profile = {
   name: "Muhammad Ramazan",
@@ -14,6 +14,10 @@ export const profile = {
     "I build *complete products*, from the data layer to the interface, and make sure they stay reliable as they grow.",
   summary:
     "Full stack engineer with 4+ years of experience shipping web applications, APIs and AI-powered features. I currently work at Skygenic on a bioinformatics analytics platform. Before that, I spent three years as a Top Rated freelancer on Upwork, where clients came back for reliable delivery and clear communication.",
+  // Used only in the generated CV (npm run cv), not on the site.
+  phone: { display: "(+92) 305-5103316", href: "tel:+923055103316" },
+  cvSummary:
+    "Full stack engineer with 4+ years of experience shipping web applications, APIs and AI-powered features, building complete products from the data layer to the interface. Currently building a bioinformatics analytics and knowledge-graph platform at Skygenic; previously a Top Rated freelancer on Upwork, where clients came back for reliable delivery and clear communication.",
   socials: {
     github: "https://github.com/lightify97",
     linkedin: "https://www.linkedin.com/in/m-ramazan",

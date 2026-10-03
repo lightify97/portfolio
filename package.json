@@ -6,7 +6,8 @@
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"cv": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-cv.mts && cd cv && pdflatex -interaction=nonstopmode -halt-on-error cv.tex >/dev/null && pdflatex -interaction=nonstopmode -halt-on-error cv.tex >/dev/null && cp cv.pdf ../public/CV.pdf && echo 'Wrote public/CV.pdf'"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
