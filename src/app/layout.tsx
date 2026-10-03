@@ -1,28 +1,4 @@
 import { PostHogProvider } from "@/components/PostHogProvider";
-<<<<<<< HEAD
-import { ThemeProvider } from "@/components/ThemeProvider";
-import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
-
-export const metadata: Metadata = {
-  title: "Muhammad Ramazan - Full Stack Developer",
-  description:
-    "Portfolio of Muhammad Ramazan, a full-stack engineer focused on TypeScript, Python, scalable systems, and AI-powered product work.",
-  keywords:
-    "Muhammad Ramazan, Full Stack Developer, TypeScript, Python, React, Next.js, Portfolio",
-  authors: [{ name: "Muhammad Ramazan" }],
-  openGraph: {
-    title: "Muhammad Ramazan - Full Stack Developer",
-    description:
-      "Portfolio of Muhammad Ramazan, a full-stack engineer focused on scalable systems and modern product development.",
-    type: "website",
-=======
 import { profile } from "@/data/profile";
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
@@ -58,43 +34,10 @@ export const metadata: Metadata = {
     url: profile.siteUrl,
     siteName: profile.name,
     type: "profile",
->>>>>>> origin/claude/practical-ptolemy-3wc9zo
   },
   twitter: { card: "summary_large_image", title, description },
 };
 
-<<<<<<< HEAD
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className={`${geistMono.variable} scroll-smooth`} suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (() => {
-                try {
-                  const storedTheme = localStorage.getItem("theme");
-                  const isLight =
-                    storedTheme === "light" ||
-                    (!storedTheme && window.matchMedia("(prefers-color-scheme: light)").matches);
-                  document.documentElement.classList.toggle("dark", !isLight);
-                } catch {
-                  document.documentElement.classList.add("dark");
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className={geistMono.className}>
-        <PostHogProvider>
-          <ThemeProvider>{children}</ThemeProvider>
-        </PostHogProvider>
-=======
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f1efea" },
@@ -124,7 +67,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <PostHogProvider>{children}</PostHogProvider>
->>>>>>> origin/claude/practical-ptolemy-3wc9zo
       </body>
     </html>
   );
