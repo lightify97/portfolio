@@ -23,7 +23,7 @@ export default function CertificateList({ certificates }: { certificates: Certif
           <li key={cert.title} className="flex items-center justify-between gap-4 py-3.5">
             <div className="min-w-0">
               <p className="font-medium leading-snug text-fg">{cert.title}</p>
-              <p className="mt-1 text-sm text-subtle">
+              <p className="mt-1 text-sm text-muted">
                 {cert.issuer} · {cert.platform} · {cert.issued}
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function CertificateList({ certificates }: { certificates: Certif
               <button
                 type="button"
                 onClick={() => setSelected(cert)}
-                className="shrink-0 rounded-full px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/10"
+                className="tag shrink-0 rounded-full border border-fg/20 px-3 py-1.5 text-fg transition-colors hover:border-accent hover:bg-accent hover:text-ink"
                 aria-label={`View certificate: ${cert.title}`}
               >
                 View

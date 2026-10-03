@@ -205,10 +205,12 @@ export const certificates: Certificate[] = [
 ];
 
 export const navLinks = [
-  { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
+  { href: "#stack", label: "Stack" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#credentials", label: "Credentials" },
   { href: "#contact", label: "Contact" },
 ];
+
+// Shown in the scrolling band under the hero.
+export const marquee = ["TypeScript", "React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL", "Temporal", "LangChain", "Docker", "AWS", "GCP"];

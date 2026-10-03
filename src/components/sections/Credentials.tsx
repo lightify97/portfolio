@@ -1,31 +1,35 @@
 import CertificateList from "@/components/ui/CertificateList";
-import SectionBlock from "@/components/ui/SectionBlock";
+import SectionTitle from "@/components/ui/SectionTitle";
 import { certificates, education } from "@/data/profile";
 
 export default function Credentials() {
   return (
-    <SectionBlock id="credentials" title="Credentials">
-      <div data-reveal>
-        <h3 className="mb-4 text-xs font-semibold uppercase tracking-wide text-fg">Education</h3>
-        <ul className="space-y-5">
-          {education.map((item) => (
-            <li key={item.degree} className="grid gap-1 sm:grid-cols-8 sm:gap-6">
-              <p className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-subtle sm:col-span-2">{item.period}</p>
-              <div className="sm:col-span-6">
-                <p className="font-medium text-fg">{item.degree}</p>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-accent">
-                  {item.school}
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section id="credentials" className="py-20 md:py-32">
+      <div className="wrap">
+        <SectionTitle index="04" title="Credentials" />
 
-      <div data-reveal className="mt-14">
-        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-fg">Certifications</h3>
-        <CertificateList certificates={certificates} />
+        <div className="grid gap-16 md:grid-cols-12">
+          <div data-reveal className="md:col-span-5">
+            <p className="tag mb-6">Education</p>
+            <ul className="space-y-8">
+              {education.map((item) => (
+                <li key={item.degree}>
+                  <p className="tag text-accent">{item.period}</p>
+                  <p className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.02em]">{item.degree}</p>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-muted hover:text-accent">
+                    {item.school}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div data-reveal className="md:col-span-7">
+            <p className="tag mb-3">Certifications</p>
+            <CertificateList certificates={certificates} />
+          </div>
+        </div>
       </div>
-    </SectionBlock>
+    </section>
   );
 }

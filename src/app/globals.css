@@ -4,38 +4,39 @@
 
 @layer base {
 	:root {
-		--bg: 248 250 252;
-		--surface: 255 255 255;
-		--fg: 15 23 42;
-		--muted: 71 85 105;
-		--subtle: 100 116 139;
-		--line: 226 232 240;
-		--accent: 13 128 118;
+		--bg: 241 239 234;
+		--surface: 250 249 246;
+		--fg: 17 17 17;
+		--muted: 85 82 78;
+		--subtle: 135 131 125;
+		--line: 216 212 204;
+		--accent: 240 78 22;
 		color-scheme: light;
 	}
 
 	.dark {
-		--bg: 10 17 32;
-		--surface: 17 26 45;
-		--fg: 226 232 240;
-		--muted: 148 163 184;
-		--subtle: 100 116 139;
-		--line: 30 41 59;
-		--accent: 94 234 212;
+		--bg: 14 14 13;
+		--surface: 24 24 22;
+		--fg: 240 238 233;
+		--muted: 163 160 153;
+		--subtle: 112 109 103;
+		--line: 44 43 40;
+		--accent: 255 98 43;
 		color-scheme: dark;
 	}
 
 	html {
 		scroll-behavior: smooth;
+		scroll-padding-top: 4rem;
 	}
 
 	body {
-		@apply bg-bg font-sans leading-relaxed text-muted antialiased;
+		@apply bg-bg font-sans text-fg antialiased;
 	}
 
 	::selection {
-		background: rgb(var(--accent) / 0.25);
-		color: rgb(var(--fg));
+		background: rgb(var(--accent));
+		color: #111;
 	}
 
 	:focus-visible {
@@ -46,41 +47,106 @@
 }
 
 @layer components {
-	.link {
-		@apply font-medium text-fg underline decoration-accent/40 decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
+	.wrap {
+		@apply mx-auto w-full max-w-[1400px] px-5 sm:px-8;
 	}
 
-	.pill {
-		@apply inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium leading-5 text-accent;
+	.tag {
+		@apply font-mono text-[11px] uppercase tracking-[0.16em] text-muted;
+	}
+
+	.link {
+		@apply underline decoration-accent decoration-2 underline-offset-[6px] transition-colors hover:text-accent;
 	}
 
 	.btn {
-		@apply inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+		@apply inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60;
 	}
 
 	.btn-primary {
-		@apply btn bg-accent text-bg hover:bg-accent/85;
+		@apply btn bg-accent text-ink hover:bg-fg hover:text-bg;
 	}
 
 	.btn-secondary {
-		@apply btn border border-line text-fg hover:border-accent hover:text-accent;
+		@apply btn border border-fg/20 text-fg hover:border-fg hover:bg-fg hover:text-bg;
 	}
 
 	.icon-btn {
-		@apply inline-flex size-9 items-center justify-center rounded-lg text-muted transition-colors hover:text-fg;
+		@apply inline-flex size-10 items-center justify-center rounded-full text-muted transition-colors duration-300 hover:bg-fg/5 hover:text-fg;
 	}
 
 	.label {
-		@apply mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-fg;
+		@apply tag mb-1 block;
 	}
 
 	.field {
-		@apply w-full rounded-lg border border-line bg-surface px-4 py-3 text-sm text-fg placeholder:text-subtle transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+		@apply w-full border-0 border-b border-line bg-transparent px-0 py-3 text-lg text-fg placeholder:text-subtle transition-colors focus:border-accent focus:outline-none focus:ring-0;
 	}
 
-	/* Hoverable card used for experience and testimonials. */
-	.card {
-		@apply relative rounded-xl transition-all duration-300 lg:p-6 lg:hover:bg-surface lg:hover:shadow-[0_1px_0_0_rgb(var(--line))_inset,0_8px_30px_-12px_rgb(0_0_0/0.15)];
+	.outline-text {
+		color: transparent;
+		-webkit-text-stroke: 1px rgb(var(--fg) / 0.35);
+	}
+}
+
+/* Film grain over the whole page */
+.grain {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Isometric stack in the hero */
+@property --spread {
+	syntax: "<length>";
+	inherits: true;
+	initial-value: 0px;
+}
+
+.stack {
+	--spread: 0px;
+	transition: --spread 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.stack-layer {
+	transform: translateY(calc(var(--i) * var(--spread) * -1));
+}
+
+.stack:hover {
+	--spread: 18px;
+}
+
+.stack-packet {
+	animation: packet 3.2s cubic-bezier(0.5, 0, 0.3, 1) infinite;
+}
+
+@keyframes packet {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+	12% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-204px);
+		opacity: 0;
+	}
+}
+
+/* Scrolling band of technologies */
+.marquee-track {
+	animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+
+@keyframes marquee {
+	to {
+		transform: translateX(-50%);
 	}
 }
 
@@ -88,10 +154,10 @@
 @media (prefers-reduced-motion: no-preference) {
 	.js [data-reveal] {
 		opacity: 0;
-		transform: translateY(14px);
+		transform: translateY(24px);
 		transition:
-			opacity 0.7s ease,
-			transform 0.7s ease;
+			opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+			transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 	}
 
 	.js [data-reveal].is-visible {
@@ -103,5 +169,10 @@
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
+	}
+
+	.stack-packet,
+	.marquee-track {
+		animation: none;
 	}
 }
