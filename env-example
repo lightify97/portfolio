@@ -1,4 +1,4 @@
-# rename this file to .env for it work
+# Copy this file to .env to enable the contact form and analytics.
 
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=YOUR_EMAILJS_SERVICE_ID
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=YOUR_EMAILJS_TEMPLATE_ID

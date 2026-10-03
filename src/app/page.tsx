@@ -1,56 +1,35 @@
-"use client";
+import Contact from "@/components/sections/Contact";
+import Credentials from "@/components/sections/Credentials";
+import Experience from "@/components/sections/Experience";
+import Footer from "@/components/sections/Footer";
+import Header from "@/components/sections/Header";
+import Hero from "@/components/sections/Hero";
+import Projects from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
+import Testimonials from "@/components/sections/Testimonials";
+import RevealObserver from "@/components/ui/RevealObserver";
 
-import {
-  Background,
-  CertificationsSection,
-  ContactSection,
-  ExperienceSection,
-  Footer,
-  HeroSection,
-  Navigation,
-  OverviewSection,
-  ProjectsSection,
-  TechStackSection,
-  TestimonialsSection
-} from "@/components/portfolio";
-
-export default function Portfolio() {
+export default function Home() {
   return (
-    <div className="min-h-screen text-gray-900 dark:text-white relative">
-      {/* Background */}
-      <Background />
-
-      {/* Navigation */}
-      <Navigation />
-
-      <div className="max-w-6xl mx-auto px-6 pt-24">
-        {/* Hero Section */}
-        <HeroSection />
-
-        {/* Overview Section */}
-        <OverviewSection />
-
-        {/* Tech Stack Section */}
-        <TechStackSection />
-
-        {/* Experience Section */}
-        <ExperienceSection />
-
-        {/* Projects Section */}
-        <ProjectsSection />
-
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-
-        {/* Certifications Section */}
-        <CertificationsSection />
-
-        {/* Contact Section */}
-        <ContactSection />
-
-        {/* Footer */}
-        <Footer />
-      </div>
-    </div>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-fg focus:px-3 focus:py-2 focus:text-bg"
+      >
+        Skip to content
+      </a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Testimonials />
+        <Credentials />
+        <Contact />
+      </main>
+      <Footer />
+      <RevealObserver />
+    </>
   );
-} 
+}
