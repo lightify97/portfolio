@@ -42,3 +42,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# LaTeX build artifacts (the CV PDF is copied to public/CV.pdf)
+/cv/*.aux
+/cv/*.log
+/cv/*.out
+/cv/*.pdf

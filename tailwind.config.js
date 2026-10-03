@@ -1,50 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-	],
+	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	darkMode: "class",
 	theme: {
 		extend: {
 			colors: {
-				border: "hsl(var(--border))",
-				input: "hsl(var(--input))",
-				ring: "hsl(var(--ring))",
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
-				primary: {
-					DEFAULT: "hsl(var(--primary))",
-					foreground: "hsl(var(--primary-foreground))",
-				},
-				secondary: {
-					DEFAULT: "hsl(var(--secondary))",
-					foreground: "hsl(var(--secondary-foreground))",
-				},
-				destructive: {
-					DEFAULT: "hsl(var(--destructive))",
-					foreground: "hsl(var(--destructive-foreground))",
-				},
-				muted: {
-					DEFAULT: "hsl(var(--muted))",
-					foreground: "hsl(var(--muted-foreground))",
-				},
-				accent: {
-					DEFAULT: "hsl(var(--accent))",
-					foreground: "hsl(var(--accent-foreground))",
-				},
-				popover: {
-					DEFAULT: "hsl(var(--popover))",
-					foreground: "hsl(var(--popover-foreground))",
-				},
-				card: {
-					DEFAULT: "hsl(var(--card))",
-					foreground: "hsl(var(--card-foreground))",
-				},
+				bg: "rgb(var(--bg) / <alpha-value>)",
+				surface: "rgb(var(--surface) / <alpha-value>)",
+				fg: "rgb(var(--fg) / <alpha-value>)",
+				muted: "rgb(var(--muted) / <alpha-value>)",
+				subtle: "rgb(var(--subtle) / <alpha-value>)",
+				line: "rgb(var(--line) / <alpha-value>)",
+				accent: "rgb(var(--accent) / <alpha-value>)",
+				ink: "#111111",
 			},
 			fontFamily: {
-				sans: ["Inter", "sans-serif"],
+				sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+				mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
 			},
 			borderRadius: {
 				'none': '0px',
@@ -57,6 +29,8 @@ module.exports = {
 					"0%": { opacity: "0" },
 					"100%": { opacity: "1" },
 				},
+			transitionTimingFunction: {
+				smooth: "cubic-bezier(0.2, 0.7, 0.2, 1)",
 			},
 		},
 	},
