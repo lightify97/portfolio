@@ -1,26 +1,27 @@
-import Section from "@/components/ui/Section";
+import SectionBlock from "@/components/ui/SectionBlock";
 import { testimonials } from "@/data/profile";
+import { Quote } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <Section id="testimonials" index="03" title="Testimonials" intro="What clients have said after working with me.">
-      <div className="grid gap-x-16 gap-y-16 md:grid-cols-2">
+    <SectionBlock id="testimonials" title="Testimonials">
+      <ul className="group/list space-y-10">
         {testimonials.map((t) => (
-          <figure key={t.author} data-reveal className="flex flex-col">
-            <span aria-hidden className="-mb-6 font-serif text-7xl leading-none text-accent/70">
-              &ldquo;
-            </span>
-            <blockquote className="flex-1 font-serif text-[1.35rem] leading-[1.45] text-fg/90">{t.quote}</blockquote>
-            <figcaption className="mt-6 text-sm">
-              <span className="font-medium">{t.author}</span>
-              <span className="text-muted">
-                {" "}
-                · {t.role}, {t.company}
-              </span>
-            </figcaption>
-          </figure>
+          <li key={t.author} data-reveal className="card lg:-mx-6 lg:group-hover/list:opacity-50 lg:hover:!opacity-100">
+            <figure>
+              <Quote className="mb-3 size-5 text-accent" aria-hidden />
+              <blockquote className="text-fg/90">{t.quote}</blockquote>
+              <figcaption className="mt-4 text-sm">
+                <span className="font-semibold text-fg">{t.author}</span>
+                <span>
+                  {" "}
+                  · {t.role}, {t.company}
+                </span>
+              </figcaption>
+            </figure>
+          </li>
         ))}
-      </div>
-    </Section>
+      </ul>
+    </SectionBlock>
   );
 }

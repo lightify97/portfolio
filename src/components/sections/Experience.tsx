@@ -1,13 +1,13 @@
-import Section from "@/components/ui/Section";
+import SectionBlock from "@/components/ui/SectionBlock";
 import { experience, type Role } from "@/data/profile";
 import { ArrowUpRight } from "lucide-react";
 
 function Bullets({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-2 text-sm">
       {items.map((item) => (
-        <li key={item} className="relative pl-5 text-[0.95rem] leading-relaxed text-muted">
-          <span aria-hidden className="absolute left-0 top-[0.8em] h-px w-2.5 bg-accent/60" />
+        <li key={item} className="relative pl-4">
+          <span aria-hidden className="absolute left-0 top-[0.6em] size-1 rounded-full bg-accent/70" />
           {item}
         </li>
       ))}
@@ -15,31 +15,30 @@ function Bullets({ items }: { items: string[] }) {
   );
 }
 
-function RoleEntry({ role }: { role: Role }) {
+function RoleCard({ role }: { role: Role }) {
   return (
-    <article data-reveal className="grid gap-5 border-t border-line pt-10 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-12">
-      <p className="text-sm tabular-nums text-subtle md:pt-2.5">{role.period}</p>
+    <li data-reveal className="card grid gap-2 sm:grid-cols-8 sm:gap-6 lg:-mx-6 lg:group-hover/list:opacity-50 lg:hover:!opacity-100">
+      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-subtle sm:col-span-2">{role.period}</p>
 
-      <div>
-        <h3 className="font-serif text-[1.75rem] leading-tight tracking-tight">{role.title}</h3>
-        <p className="mt-2 text-muted">
+      <div className="sm:col-span-6">
+        <h3 className="font-medium leading-snug text-fg">
+          {role.title} ·{" "}
           {role.companyUrl ? (
-            <a href={role.companyUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-0.5 font-medium text-fg hover:text-accent">
+            <a href={role.companyUrl} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-baseline hover:text-accent">
               {role.company}
-              <ArrowUpRight className="size-3.5 text-subtle transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden />
+              <ArrowUpRight className="ml-0.5 size-3.5 self-center transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" aria-hidden />
             </a>
           ) : (
-            <span className="font-medium text-fg">{role.company}</span>
+            role.company
           )}
-          <span className="mx-2 text-line">—</span>
-          {role.context}
-        </p>
+        </h3>
+        <p className="mt-1 text-sm">{role.context}</p>
 
         {role.groups && (
-          <div className="mt-10 grid gap-x-14 gap-y-10 lg:grid-cols-2">
+          <div className="mt-5 space-y-5">
             {role.groups.map((group) => (
               <div key={group.title}>
-                <h4 className="eyebrow mb-4">{group.title}</h4>
+                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-fg">{group.title}</h4>
                 <Bullets items={group.items} />
               </div>
             ))}
@@ -47,31 +46,33 @@ function RoleEntry({ role }: { role: Role }) {
         )}
 
         {role.highlights && (
-          <div className="mt-8">
+          <div className="mt-4">
             <Bullets items={role.highlights} />
           </div>
         )}
 
         {role.tech && (
-          <ul className="dotlist mt-10 text-sm text-subtle" aria-label="Technologies">
+          <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
             {role.tech.map((t) => (
-              <li key={t}>{t}</li>
+              <li key={t} className="pill">
+                {t}
+              </li>
             ))}
           </ul>
         )}
       </div>
-    </article>
+    </li>
   );
 }
 
 export default function Experience() {
   return (
-    <Section id="experience" index="01" title="Experience" intro="Where I've worked, and what I shipped there.">
-      <div className="space-y-16">
+    <SectionBlock id="experience" title="Experience">
+      <ol className="group/list space-y-12">
         {experience.map((role) => (
-          <RoleEntry key={`${role.company}-${role.title}`} role={role} />
+          <RoleCard key={`${role.company}-${role.title}`} role={role} />
         ))}
-      </div>
-    </Section>
+      </ol>
+    </SectionBlock>
   );
 }

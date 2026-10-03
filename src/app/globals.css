@@ -4,86 +4,83 @@
 
 @layer base {
 	:root {
-		--bg: 250 248 244;
-		--surface: 255 254 251;
-		--fg: 28 25 22;
-		--muted: 92 86 79;
-		--subtle: 146 139 130;
-		--line: 228 224 216;
-		--accent: 158 72 40;
+		--bg: 248 250 252;
+		--surface: 255 255 255;
+		--fg: 15 23 42;
+		--muted: 71 85 105;
+		--subtle: 100 116 139;
+		--line: 226 232 240;
+		--accent: 13 128 118;
 		color-scheme: light;
 	}
 
 	.dark {
-		--bg: 18 17 15;
-		--surface: 25 23 21;
-		--fg: 237 233 226;
-		--muted: 172 165 155;
-		--subtle: 124 118 110;
-		--line: 46 43 39;
-		--accent: 226 145 108;
+		--bg: 10 17 32;
+		--surface: 17 26 45;
+		--fg: 226 232 240;
+		--muted: 148 163 184;
+		--subtle: 100 116 139;
+		--line: 30 41 59;
+		--accent: 94 234 212;
 		color-scheme: dark;
 	}
 
 	html {
 		scroll-behavior: smooth;
-		scroll-padding-top: 5rem;
 	}
 
 	body {
-		@apply bg-bg font-sans text-fg antialiased;
-		font-feature-settings: "ss01", "cv11";
-		text-rendering: optimizeLegibility;
+		@apply bg-bg font-sans leading-relaxed text-muted antialiased;
 	}
 
 	::selection {
-		background: rgb(var(--accent) / 0.18);
+		background: rgb(var(--accent) / 0.25);
+		color: rgb(var(--fg));
 	}
 
 	:focus-visible {
-		outline: 1.5px solid rgb(var(--accent));
+		outline: 2px solid rgb(var(--accent));
 		outline-offset: 3px;
 		border-radius: 4px;
 	}
 }
 
 @layer components {
-	.eyebrow {
-		@apply text-[11px] font-medium uppercase tracking-[0.22em] text-subtle;
+	.link {
+		@apply font-medium text-fg underline decoration-accent/40 decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
 	}
 
-	.link {
-		@apply underline decoration-line decoration-1 underline-offset-[5px] transition-colors duration-300 hover:text-accent hover:decoration-accent/50;
+	.pill {
+		@apply inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium leading-5 text-accent;
 	}
 
 	.btn {
-		@apply inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-medium transition-all duration-300 ease-smooth disabled:cursor-not-allowed disabled:opacity-60;
+		@apply inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
 	}
 
 	.btn-primary {
-		@apply btn bg-fg text-bg hover:bg-accent;
+		@apply btn bg-accent text-bg hover:bg-accent/85;
 	}
 
 	.btn-secondary {
-		@apply btn border border-line text-fg hover:border-fg/40;
+		@apply btn border border-line text-fg hover:border-accent hover:text-accent;
 	}
 
 	.icon-btn {
-		@apply inline-flex size-9 items-center justify-center rounded-full text-muted transition-colors duration-300 hover:bg-line/50 hover:text-fg;
+		@apply inline-flex size-9 items-center justify-center rounded-lg text-muted transition-colors hover:text-fg;
+	}
+
+	.label {
+		@apply mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-fg;
 	}
 
 	.field {
-		@apply w-full border-0 border-b border-line bg-transparent px-0 py-3 text-base text-fg placeholder:text-subtle/80 transition-colors duration-300 focus:border-fg focus:outline-none focus:ring-0;
+		@apply w-full rounded-lg border border-line bg-surface px-4 py-3 text-sm text-fg placeholder:text-subtle transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
 	}
 
-	/* A quiet inline list: "React · Next.js · Tailwind" */
-	.dotlist {
-		@apply flex flex-wrap gap-x-2.5 gap-y-1;
-	}
-
-	.dotlist > li:not(:last-child)::after {
-		content: "·";
-		@apply ml-2.5 text-subtle;
+	/* Hoverable card used for experience and testimonials. */
+	.card {
+		@apply relative rounded-xl transition-all duration-300 lg:p-6 lg:hover:bg-surface lg:hover:shadow-[0_1px_0_0_rgb(var(--line))_inset,0_8px_30px_-12px_rgb(0_0_0/0.15)];
 	}
 }
 
@@ -91,10 +88,10 @@
 @media (prefers-reduced-motion: no-preference) {
 	.js [data-reveal] {
 		opacity: 0;
-		transform: translateY(16px);
+		transform: translateY(14px);
 		transition:
-			opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
-			transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+			opacity 0.7s ease,
+			transform 0.7s ease;
 	}
 
 	.js [data-reveal].is-visible {

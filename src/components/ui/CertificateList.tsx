@@ -18,11 +18,11 @@ export default function CertificateList({ certificates }: { certificates: Certif
 
   return (
     <>
-      <ul>
+      <ul className="divide-y divide-line">
         {certificates.map((cert) => (
-          <li key={cert.title} className="flex items-center justify-between gap-4 border-b border-line py-4 first:pt-0">
+          <li key={cert.title} className="flex items-center justify-between gap-4 py-3.5">
             <div className="min-w-0">
-              <p className="leading-snug">{cert.title}</p>
+              <p className="font-medium leading-snug text-fg">{cert.title}</p>
               <p className="mt-1 text-sm text-subtle">
                 {cert.issuer} · {cert.platform} · {cert.issued}
               </p>
@@ -31,7 +31,7 @@ export default function CertificateList({ certificates }: { certificates: Certif
               <button
                 type="button"
                 onClick={() => setSelected(cert)}
-                className="link shrink-0 text-sm text-muted"
+                className="shrink-0 rounded-full px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/10"
                 aria-label={`View certificate: ${cert.title}`}
               >
                 View
@@ -54,7 +54,7 @@ export default function CertificateList({ certificates }: { certificates: Certif
           <div>
             <div className="flex items-center justify-between gap-4 border-b border-line px-5 py-3">
               <div className="min-w-0">
-                <p className="truncate font-serif text-xl">{selected.title}</p>
+                <p className="truncate font-semibold">{selected.title}</p>
                 <p className="text-sm text-muted">
                   {selected.issuer} · {selected.issued}
                 </p>
