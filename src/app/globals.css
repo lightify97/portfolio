@@ -4,26 +4,24 @@
 
 @layer base {
 	:root {
-		--bg: 250 250 249;
-		--surface: 255 255 255;
-		--fg: 23 23 23;
-		--muted: 82 82 91;
-		--subtle: 130 130 140;
-		--line: 228 228 231;
-		--accent: 29 78 216;
-		--accent-fg: 255 255 255;
+		--bg: 250 248 244;
+		--surface: 255 254 251;
+		--fg: 28 25 22;
+		--muted: 92 86 79;
+		--subtle: 146 139 130;
+		--line: 228 224 216;
+		--accent: 158 72 40;
 		color-scheme: light;
 	}
 
 	.dark {
-		--bg: 11 11 13;
-		--surface: 20 20 23;
-		--fg: 236 236 238;
-		--muted: 161 161 170;
-		--subtle: 113 113 122;
-		--line: 39 39 42;
-		--accent: 125 162 255;
-		--accent-fg: 11 11 13;
+		--bg: 18 17 15;
+		--surface: 25 23 21;
+		--fg: 237 233 226;
+		--muted: 172 165 155;
+		--subtle: 124 118 110;
+		--line: 46 43 39;
+		--accent: 226 145 108;
 		color-scheme: dark;
 	}
 
@@ -34,43 +32,58 @@
 
 	body {
 		@apply bg-bg font-sans text-fg antialiased;
+		font-feature-settings: "ss01", "cv11";
 		text-rendering: optimizeLegibility;
 	}
 
 	::selection {
-		background: rgb(var(--accent) / 0.2);
+		background: rgb(var(--accent) / 0.18);
 	}
 
 	:focus-visible {
-		outline: 2px solid rgb(var(--accent));
+		outline: 1.5px solid rgb(var(--accent));
 		outline-offset: 3px;
 		border-radius: 4px;
 	}
 }
 
 @layer components {
-	.link {
-		@apply underline decoration-line decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
+	.eyebrow {
+		@apply text-[11px] font-medium uppercase tracking-[0.22em] text-subtle;
 	}
 
-	.chip {
-		@apply inline-flex items-center rounded-md border border-line bg-surface px-2 py-0.5 font-mono text-xs text-muted;
+	.link {
+		@apply underline decoration-line decoration-1 underline-offset-[5px] transition-colors duration-300 hover:text-accent hover:decoration-accent/50;
 	}
 
 	.btn {
-		@apply inline-flex h-10 items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+		@apply inline-flex h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-medium transition-all duration-300 ease-smooth disabled:cursor-not-allowed disabled:opacity-60;
 	}
 
 	.btn-primary {
-		@apply btn bg-fg text-bg hover:bg-fg/85;
+		@apply btn bg-fg text-bg hover:bg-accent;
 	}
 
 	.btn-secondary {
-		@apply btn border border-line bg-surface text-fg hover:border-subtle;
+		@apply btn border border-line text-fg hover:border-fg/40;
+	}
+
+	.icon-btn {
+		@apply inline-flex size-9 items-center justify-center rounded-full text-muted transition-colors duration-300 hover:bg-line/50 hover:text-fg;
 	}
 
 	.field {
-		@apply w-full rounded-lg border border-line bg-surface px-3.5 py-2.5 text-sm text-fg placeholder:text-subtle transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+		@apply w-full border-0 border-b border-line bg-transparent px-0 py-3 text-base text-fg placeholder:text-subtle/80 transition-colors duration-300 focus:border-fg focus:outline-none focus:ring-0;
+	}
+
+	/* A quiet inline list: "React · Next.js · Tailwind" */
+	.dotlist {
+		@apply flex flex-wrap gap-x-2.5 gap-y-1;
+	}
+
+	.dotlist > li:not(:last-child)::after {
+		content: "·";
+		@apply ml-2.5 text-subtle;
 	}
 }
 
@@ -78,10 +91,10 @@
 @media (prefers-reduced-motion: no-preference) {
 	.js [data-reveal] {
 		opacity: 0;
-		transform: translateY(12px);
+		transform: translateY(16px);
 		transition:
-			opacity 0.6s ease,
-			transform 0.6s ease;
+			opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+			transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 	}
 
 	.js [data-reveal].is-visible {

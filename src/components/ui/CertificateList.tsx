@@ -18,12 +18,12 @@ export default function CertificateList({ certificates }: { certificates: Certif
 
   return (
     <>
-      <ul className="divide-y divide-line border-y border-line">
+      <ul>
         {certificates.map((cert) => (
-          <li key={cert.title} className="flex items-center justify-between gap-4 py-3.5">
+          <li key={cert.title} className="flex items-center justify-between gap-4 border-b border-line py-4 first:pt-0">
             <div className="min-w-0">
-              <p className="font-medium leading-snug">{cert.title}</p>
-              <p className="mt-0.5 text-sm text-muted">
+              <p className="leading-snug">{cert.title}</p>
+              <p className="mt-1 text-sm text-subtle">
                 {cert.issuer} · {cert.platform} · {cert.issued}
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function CertificateList({ certificates }: { certificates: Certif
               <button
                 type="button"
                 onClick={() => setSelected(cert)}
-                className="shrink-0 rounded-md px-2 py-1 font-mono text-xs text-subtle transition-colors hover:bg-line/60 hover:text-fg"
+                className="link shrink-0 text-sm text-muted"
                 aria-label={`View certificate: ${cert.title}`}
               >
                 View
@@ -48,13 +48,13 @@ export default function CertificateList({ certificates }: { certificates: Certif
           // Close when the backdrop (the dialog element itself) is clicked.
           if (e.target === e.currentTarget) setSelected(null);
         }}
-        className="w-[min(960px,calc(100vw-2rem))] rounded-xl border border-line bg-surface p-0 text-fg shadow-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+        className="w-[min(960px,calc(100vw-2rem))] rounded-2xl border border-line bg-surface p-0 text-fg shadow-2xl backdrop:bg-black/50 backdrop:backdrop-blur-sm"
       >
         {selected?.image && (
           <div>
             <div className="flex items-center justify-between gap-4 border-b border-line px-5 py-3">
               <div className="min-w-0">
-                <p className="truncate font-medium">{selected.title}</p>
+                <p className="truncate font-serif text-xl">{selected.title}</p>
                 <p className="text-sm text-muted">
                   {selected.issuer} · {selected.issued}
                 </p>
@@ -63,7 +63,7 @@ export default function CertificateList({ certificates }: { certificates: Certif
                 type="button"
                 onClick={() => setSelected(null)}
                 aria-label="Close"
-                className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg text-muted hover:bg-line/60 hover:text-fg"
+                className="icon-btn shrink-0"
               >
                 <X className="size-5" />
               </button>

@@ -48,16 +48,16 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={onSubmit} className="space-y-8">
+      <div className="grid gap-8 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium">
+          <label htmlFor="name" className="eyebrow block">
             Name
           </label>
           <input id="name" name="name" required autoComplete="name" value={form.name} onChange={onChange} className="field" placeholder="Jane Doe" />
         </div>
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-medium">
+          <label htmlFor="email" className="eyebrow block">
             Email
           </label>
           <input
@@ -74,22 +74,22 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium">
+        <label htmlFor="message" className="eyebrow block">
           Message
         </label>
         <textarea
           id="message"
           name="message"
           required
-          rows={6}
+          rows={4}
           value={form.message}
           onChange={onChange}
-          className="field resize-y"
+          className="field resize-none"
           placeholder="A few lines about the project, role or problem you're working on."
         />
       </div>
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
         <button type="submit" disabled={status === "sending"} className="btn-primary">
           {status === "sending" ? (
             <>

@@ -4,10 +4,10 @@ import { ArrowUpRight } from "lucide-react";
 
 function Bullets({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-2.5">
+    <ul className="space-y-3">
       {items.map((item) => (
-        <li key={item} className="relative pl-5 leading-relaxed text-muted">
-          <span aria-hidden className="absolute left-0 top-[0.7em] h-px w-2.5 bg-subtle" />
+        <li key={item} className="relative pl-5 text-[0.95rem] leading-relaxed text-muted">
+          <span aria-hidden className="absolute left-0 top-[0.8em] h-px w-2.5 bg-accent/60" />
           {item}
         </li>
       ))}
@@ -17,29 +17,29 @@ function Bullets({ items }: { items: string[] }) {
 
 function RoleEntry({ role }: { role: Role }) {
   return (
-    <article data-reveal className="grid gap-4 md:grid-cols-[200px_1fr] md:gap-10">
-      <p className="pt-1 font-mono text-sm text-subtle">{role.period}</p>
+    <article data-reveal className="grid gap-5 border-t border-line pt-10 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-12">
+      <p className="text-sm tabular-nums text-subtle md:pt-2.5">{role.period}</p>
 
       <div>
-        <h3 className="text-lg font-semibold tracking-tight">
-          {role.title}
-          <span className="text-muted"> · </span>
+        <h3 className="font-serif text-[1.75rem] leading-tight tracking-tight">{role.title}</h3>
+        <p className="mt-2 text-muted">
           {role.companyUrl ? (
-            <a href={role.companyUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-0.5 hover:text-accent">
+            <a href={role.companyUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-0.5 font-medium text-fg hover:text-accent">
               {role.company}
-              <ArrowUpRight className="size-4 text-subtle transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden />
+              <ArrowUpRight className="size-3.5 text-subtle transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden />
             </a>
           ) : (
-            role.company
+            <span className="font-medium text-fg">{role.company}</span>
           )}
-        </h3>
-        <p className="mt-1 text-muted">{role.context}</p>
+          <span className="mx-2 text-line">—</span>
+          {role.context}
+        </p>
 
         {role.groups && (
-          <div className="mt-6 grid gap-x-10 gap-y-7 lg:grid-cols-2">
+          <div className="mt-10 grid gap-x-14 gap-y-10 lg:grid-cols-2">
             {role.groups.map((group) => (
               <div key={group.title}>
-                <h4 className="mb-3 text-sm font-medium text-fg">{group.title}</h4>
+                <h4 className="eyebrow mb-4">{group.title}</h4>
                 <Bullets items={group.items} />
               </div>
             ))}
@@ -47,17 +47,15 @@ function RoleEntry({ role }: { role: Role }) {
         )}
 
         {role.highlights && (
-          <div className="mt-5">
+          <div className="mt-8">
             <Bullets items={role.highlights} />
           </div>
         )}
 
         {role.tech && (
-          <ul className="mt-6 flex flex-wrap gap-1.5" aria-label="Technologies">
+          <ul className="dotlist mt-10 text-sm text-subtle" aria-label="Technologies">
             {role.tech.map((t) => (
-              <li key={t} className="chip">
-                {t}
-              </li>
+              <li key={t}>{t}</li>
             ))}
           </ul>
         )}

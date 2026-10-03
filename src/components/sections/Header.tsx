@@ -46,25 +46,24 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
-        scrolled || open ? "border-b border-line bg-bg/80 backdrop-blur-md" : "border-b border-transparent"
+        scrolled || open ? "border-b border-line/70 bg-bg/80 backdrop-blur-md" : "border-b border-transparent"
       }`}
     >
-      <div className="container flex h-16 items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-2.5 font-semibold tracking-tight" onClick={() => setOpen(false)}>
-          <span className="inline-flex size-7 items-center justify-center rounded-md bg-fg font-mono text-[11px] font-bold text-bg">
-            MR
-          </span>
-          <span className="hidden sm:inline">{profile.name}</span>
+      <div className="container flex h-[4.5rem] items-center justify-between gap-6">
+        <a href="#top" className="font-serif text-[1.35rem] leading-none tracking-tight" onClick={() => setOpen(false)}>
+          {profile.name}
         </a>
 
         <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-7">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`rounded-md px-3 py-2 text-sm transition-colors hover:text-fg ${
-                    active === link.href ? "text-fg" : "text-muted"
+                  className={`relative py-2 text-sm transition-colors duration-300 hover:text-fg ${
+                    active === link.href
+                      ? "text-fg after:absolute after:-bottom-0.5 after:left-1/2 after:size-1 after:-translate-x-1/2 after:rounded-full after:bg-accent"
+                      : "text-muted"
                   }`}
                 >
                   {link.label}
@@ -76,7 +75,7 @@ export default function Header() {
 
         <div className="flex items-center gap-1">
           <ThemeToggle />
-          <a href={profile.cvUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary ml-2 hidden h-9 sm:inline-flex">
+          <a href={profile.cvUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary ml-2 hidden h-9 px-4 sm:inline-flex">
             Résumé
           </a>
           <button
@@ -85,7 +84,7 @@ export default function Header() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="inline-flex size-9 items-center justify-center rounded-lg text-muted hover:bg-line/60 hover:text-fg lg:hidden"
+            className="icon-btn lg:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -93,14 +92,14 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="h-[calc(100dvh-4rem)] border-t border-line bg-bg lg:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="h-[calc(100dvh-4.5rem)] border-t border-line bg-bg lg:hidden">
           <ul className="container flex flex-col py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block border-b border-line py-4 text-lg font-medium"
+                  className="block border-b border-line py-5 font-serif text-3xl"
                 >
                   {link.label}
                 </a>

@@ -24,7 +24,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-      className="inline-flex size-9 items-center justify-center rounded-lg text-muted transition-colors hover:bg-line/60 hover:text-fg"
+      className="icon-btn"
     >
       {/* Render both icons and let CSS pick, so the server markup is theme-agnostic. */}
       <Sun className="hidden size-[18px] dark:block" aria-hidden />

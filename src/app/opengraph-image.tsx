@@ -16,19 +16,19 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: "#0b0b0d",
-          color: "#ececee",
+          background: "#12110f",
+          color: "#ede9e2",
         }}
       >
-        <div style={{ display: "flex", fontSize: 22, color: "#7da2ff", letterSpacing: 4 }}>MRAMAZAN.DEV</div>
+        <div style={{ display: "flex", fontSize: 22, color: "#e2916c", letterSpacing: 4 }}>MRAMAZAN.DEV</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 76, fontWeight: 700, letterSpacing: -2 }}>{profile.name}</div>
-          <div style={{ fontSize: 38, color: "#a1a1aa", marginTop: 12 }}>{profile.role}</div>
+          <div style={{ fontSize: 38, color: "#aca59b", marginTop: 12 }}>{profile.role}</div>
         </div>
-        <div style={{ display: "flex", gap: 56, fontSize: 24, color: "#a1a1aa" }}>
+        <div style={{ display: "flex", gap: 56, fontSize: 24, color: "#aca59b" }}>
           {stats.map((s) => (
             <div key={s.label} style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ color: "#ececee", fontSize: 36, fontWeight: 700 }}>{s.value}</span>
+              <span style={{ color: "#ede9e2", fontSize: 36, fontWeight: 700 }}>{s.value}</span>
               <span>{s.label}</span>
             </div>
           ))}

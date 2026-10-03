@@ -5,8 +5,8 @@ module.exports = {
 	theme: {
 		container: {
 			center: true,
-			padding: { DEFAULT: "1.25rem", sm: "1.5rem" },
-			screens: { lg: "1080px" },
+			padding: { DEFAULT: "1.25rem", sm: "2rem" },
+			screens: { lg: "1120px" },
 		},
 		extend: {
 			colors: {
@@ -17,11 +17,13 @@ module.exports = {
 				subtle: "rgb(var(--subtle) / <alpha-value>)",
 				line: "rgb(var(--line) / <alpha-value>)",
 				accent: "rgb(var(--accent) / <alpha-value>)",
-				"accent-fg": "rgb(var(--accent-fg) / <alpha-value>)",
 			},
 			fontFamily: {
 				sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
-				mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+				serif: ["var(--font-serif)", "ui-serif", "Georgia", "serif"],
+			},
+			transitionTimingFunction: {
+				smooth: "cubic-bezier(0.2, 0.7, 0.2, 1)",
 			},
 		},
 	},

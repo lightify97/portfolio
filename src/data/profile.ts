@@ -10,7 +10,8 @@ export const profile = {
   cvUrl: "/CV.pdf",
   availability: "Open to new opportunities",
   headline:
-    "I build complete products, from the data layer to the interface, and make sure they stay reliable as they grow.",
+    // Wrap a phrase in *asterisks* to set it in italics.
+    "I build *complete products*, from the data layer to the interface, and make sure they stay reliable as they grow.",
   summary:
     "Full stack engineer with 4+ years of experience shipping web applications, APIs and AI-powered features. I currently work at Skygenic on a bioinformatics analytics platform. Before that, I spent three years as a Top Rated freelancer on Upwork, where clients came back for reliable delivery and clear communication.",
   socials: {

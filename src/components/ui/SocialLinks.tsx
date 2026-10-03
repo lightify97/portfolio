@@ -21,7 +21,7 @@ export default function SocialLinks({ className = "" }: { className?: string }) 
             title={label}
             target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="inline-flex size-9 items-center justify-center rounded-lg text-muted transition-colors hover:bg-line/60 hover:text-fg"
+            className="icon-btn"
           >
             <Icon className="size-[18px]" aria-hidden />
           </a>
