@@ -2,7 +2,7 @@
 
 import { useTheme } from "@/components/ThemeProvider";
 import { Icon } from "@iconify/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /**
@@ -15,7 +15,6 @@ export default function Navigation() {
   const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("about");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const sections = [
     { id: "about", label: "ABOUT", number: "01" },
