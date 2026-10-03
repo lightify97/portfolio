@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="relative border-4 md:border-8 border-black dark:border-white bg-white dark:bg-zinc-900 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] md:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] dark:md:shadow-[16px_16px_0px_0px_rgba(255,255,255,1)] p-4 md:p-8 lg:p-12 transition-all duration-300"
             style={{
               boxShadow: mousePosition.x !== 0
-                ? `${16 + (mousePosition.x - heroRef.current?.getBoundingClientRect().width! / 2) / 50}px ${16 + (mousePosition.y - heroRef.current?.getBoundingClientRect().height! / 2) / 50}px 0px 0px rgba(0,0,0,1)`
+                ? `${16 + (mousePosition.x - (heroRef.current?.getBoundingClientRect().width ?? 0) / 2) / 50}px ${16 + (mousePosition.y - (heroRef.current?.getBoundingClientRect().height ?? 0) / 2) / 50}px 0px 0px rgba(0,0,0,1)`
                 : "",
             }}
           >
@@ -161,7 +161,7 @@ export default function HeroSection() {
 
             {/* Decorative code-like annotation */}
             <div className="absolute bottom-2 md:bottom-4 left-4 md:left-8 text-[10px] md:text-xs font-mono text-zinc-400">
-              &lt;developer version="5.0" /&gt;
+              {`<developer version="5.0" />`}
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function HeroSection() {
         {/* Tagline - creative block with kinetic animation */}
         <div className="mb-8 md:mb-12 relative">
           <div className="absolute -left-4 top-0 text-xs font-mono text-zinc-400" style={{writingMode: 'vertical-rl'}}>
-            // MISSION
+            {"// MISSION"}
           </div>
           <div className="bg-black dark:bg-white text-white dark:text-black px-6 py-6 md:px-12 md:py-8 shadow-[12px_12px_0px_0px_rgba(234,179,8,1)] dark:shadow-[12px_12px_0px_0px_rgba(59,130,246,1)] max-w-4xl mx-auto relative">
             <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-black px-2 py-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">!</div>
@@ -260,7 +260,7 @@ export default function HeroSection() {
 
         {/* Scroll indicator - creative with code annotation */}
         <div className="flex flex-col items-center gap-2 md:gap-3 relative">
-          <div className="text-[10px] md:text-xs font-mono text-zinc-400 mb-1 md:mb-2">// SCROLL ↓</div>
+          <div className="text-[10px] md:text-xs font-mono text-zinc-400 mb-1 md:mb-2">{"// SCROLL ↓"}</div>
           <button
             onClick={() => {
               const aboutSection = document.getElementById('about');

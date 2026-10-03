@@ -2,8 +2,16 @@
 
 import { useTheme } from "@/components/ThemeProvider";
 import { Icon } from "@iconify/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
+const sections = [
+  { id: "about", label: "ABOUT", number: "01" },
+  { id: "stack", label: "STACK", number: "02" },
+  { id: "experience", label: "EXPERIENCE", number: "03" },
+  { id: "work", label: "WORK", number: "04" },
+  { id: "contact", label: "CONTACT", number: "05" },
+];
 
 /**
  * MINIMALIST BRUTALIST NAVIGATION
@@ -15,15 +23,6 @@ export default function Navigation() {
   const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("about");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const sections = [
-    { id: "about", label: "ABOUT", number: "01" },
-    { id: "stack", label: "STACK", number: "02" },
-    { id: "experience", label: "EXPERIENCE", number: "03" },
-    { id: "work", label: "WORK", number: "04" },
-    { id: "contact", label: "CONTACT", number: "05" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
